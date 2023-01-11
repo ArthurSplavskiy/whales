@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk" prefix="og: http://ogp.me/ns#">
+	@@include('html/_head.htm',{})
+
+	<body class="p-404">
+		<div class="wrapper" style="overflow: hidden">
+			@@include('html/_preloader-markup.htm',{}) @@include('html/_header.htm',{})
+			<main data-an="_fadeUp20">
+				<section class="s-hero">
+					<div class="s-hero-image">
+						<img src="img/hero-07.png" alt="abc" />
+					</div>
+					<div class="container">
+						<div class="s-hero-content">
+							<div class="s-hero-text">
+								<h1 class="s-hero-title" data-an="_fadeUp">404</h1>
+								<p class="s-hero-descr" data-an="_fadeUp" data-del="0.2">
+									Упс. здається щось пішло не так. Спробуйте перезавантажити сторінку, або
+									поверніться на головну
+								</p>
+							</div>
+							<div class="btn">
+								<a href="index.html" class="btn-circle">
+									<img src="img/interface/btn-arrow.svg" alt="link" />
+								</a>
+								<a href="index.html" class="btn-text">Головна сторінка</a>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{}) @@include('html/_popup-thank.htm',{})
+			@@include('html/_js.htm',{})
+		</div>
+	</body>
+</html>

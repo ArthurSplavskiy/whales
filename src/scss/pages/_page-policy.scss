@@ -1,0 +1,57 @@
+.p-policy {
+	color: black;
+
+	h1 {
+		font-weight: 700;
+		font-size: 40px;
+		line-height: 120%;
+		color: #76777e;
+		margin-bottom: 32px;
+		@media (max-width: $mobile) {
+			font-size: 32px;
+		}
+	}
+	&-text {
+		max-width: 872px;
+		padding: 40px 0 80px 0;
+		@media (max-width: $mobile) {
+			padding: 70px 0 48px 0;
+		}
+		h2 {
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 32px;
+			color: #454649;
+			@media (max-width: $mobile) {
+				line-height: 24px;
+			}
+			&:not(:last-child) {
+				margin-bottom: 24px;
+				@media (max-width: $mobile) {
+					margin-bottom: 16px;
+				}
+			}
+			@media (max-width: $mobile) {
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+		& > div {
+			&:not(:last-child) {
+				margin-bottom: 40px;
+			}
+			& > p {
+				font-weight: 500;
+				font-size: 14px;
+				line-height: 20px;
+				color: #848484;
+				&:not(:last-child) {
+					margin-bottom: 16px;
+					@media (max-width: $mobile) {
+						margin-bottom: 8px;
+					}
+				}
+			}
+		}
+	}
+}

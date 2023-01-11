@@ -1,0 +1,16 @@
+.p-404 {
+	h1 {
+		color: white;
+		font-weight: 700;
+		font-size: 120px;
+		line-height: 120px;
+		margin-bottom: 16px;
+		@media (max-width: $mobile) {
+			font-size: 80px;
+			line-height: 80px;
+		}
+	}
+	.s-hero-descr {
+		max-width: 560px;
+	}
+}

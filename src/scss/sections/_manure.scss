@@ -1,0 +1,69 @@
+.s-manure {
+	.triple-grid {
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	&-parther {
+		padding-bottom: 0;
+		.s-headline {
+			max-width: 100%;
+		}
+		.triple-grid {
+			@media (max-width: $mobile) {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+	.manure-card {
+		border-radius: 10px;
+		border: 1px solid #f4efea;
+		@media (max-width: $mobile) {
+			border: none;
+		}
+		&:hover {
+			h4 {
+				color: $orange;
+			}
+		}
+		&-img {
+			width: 100%;
+			height: 360px;
+			position: relative;
+			overflow: hidden;
+			@media (max-width: $mobile) {
+				height: 155px;
+			}
+			img {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				inset: 0;
+				object-fit: cover;
+			}
+		}
+		&-text {
+			padding: 24px;
+			@media (max-width: $mobile) {
+				padding: 0;
+			}
+			h4 {
+				font-weight: 700;
+				font-size: 32px;
+				line-height: 160%;
+				margin-bottom: 16px;
+				transition: $transition;
+				@media (max-width: $mobile) {
+					font-size: 16px;
+					margin-bottom: 4px;
+				}
+			}
+			p {
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 160%;
+				color: #76777e;
+			}
+		}
+	}
+}

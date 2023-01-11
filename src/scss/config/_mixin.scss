@@ -1,0 +1,120 @@
+@use 'sass:math';
+
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+
+	@return $result;
+}
+
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+
+	@return $result;
+}
+
+@mixin placeholder($color: #333, $opacity: 1) {
+	&::-webkit-input-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+	&::-moz-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+	&:-moz-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+}
+
+@mixin placeholder-content {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
+@function z($name) {
+	@if index($z-indexes, $name) {
+		@return (length($z-indexes) - index($z-indexes, $name)) + 1;
+	} @else {
+		@warn 'There is no item "#{$name}" in this list; Chose one of: #{$z-indexes}';
+		@return null;
+	}
+}
+
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		src: url('../fonts/#{$file_name}.woff2') format('woff2'),
+			url('../fonts/#{$file_name}.woff') format('woff');
+		font-weight: #{$weight};
+		font-style: #{$style};
+		font-display: swap;
+	}
+}
+
+@mixin disable-scrollbar() {
+	// webkit
+	&::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: transparent;
+	}
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	// -moz-
+	&::-moz-scrollbar {
+		width: 0;
+		height: 0;
+	}
+	&::-moz-scrollbar-thumb {
+		background: transparent;
+	}
+	&::-moz-scrollbar-track {
+		background: transparent;
+	}
+
+	//-ms-
+	&::-ms-scrollbar {
+		width: 0;
+		height: 0;
+	}
+	&::-ms-scrollbar-thumb {
+		background: transparent;
+	}
+	&::-ms-scrollbar-track {
+		background: transparent;
+	}
+}
+
+@mixin gradient-text($color) {
+	background: $color;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+}
+
+@mixin gradient-border($color: linear-gradient(to left, #743ad5, #d53a9d), $borderWidth: 1px) {
+	border: $borderWidth solid;
+	border-image-slice: 1;
+	border-width: $borderWidth;
+	border-image-source: $color;
+}

@@ -1,0 +1,41 @@
+button {
+	&:active {
+		transform: scale(0.98) !important;
+	}
+}
+
+.btn {
+	padding: 17px 48px 15px 48px;
+	border-radius: 80px;
+	display: inline-flex;
+	align-items: center;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 100%;
+	transition: $transition;
+	white-space: nowrap;
+	cursor: pointer;
+	@media (max-width: $tablet) {
+		padding: 13px 46px 13px 46px;
+		font-size: 14px;
+	}
+	@media (max-width: $mobile) {
+		padding: 10px 24px 10px 24px;
+		font-size: 12px;
+	}
+
+	&:active {
+		transform: scale(0.98);
+	}
+
+	&-primary {
+		color: $primary-black;
+		background: $primary-ohra;
+		&:hover {
+			background: $ohra-hover;
+		}
+		&:disabled {
+			background: $ohra-disabled;
+		}
+	}
+}

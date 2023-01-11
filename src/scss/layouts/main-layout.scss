@@ -1,0 +1,12 @@
+.wrapper {
+	min-height: 100vh;
+	main {
+		z-index: z('wrapper-main');
+	}
+}
+
+.p-home {
+	.s-hero-text:not(:last-child) {
+		margin: 40px 0 auto 0;
+	}
+}

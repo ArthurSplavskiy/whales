@@ -1,0 +1,24 @@
+:root {
+	--content-padding: 18px;
+}
+
+$fontSize: rem(18);
+
+$minWidth: 320;
+$maxWidth: 1440;
+$maxWidthContainer: 1574;
+$maxWidthContainerPX: 1574px;
+$containerPadding: 36;
+$containerWidth: $maxWidthContainer + $containerPadding + px;
+
+$fullHd: em(1920);
+$pc: em($containerWidth);
+$tablet: em(991.98);
+$mobile: em(743.98);
+$mobileSmall: em(479.98);
+
+$transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+$z-indexes: ('header', 'footer', 'wrapper-main');
+
+$bottom-line: inset 0px -1px 0px #525259;

@@ -1,0 +1,11 @@
+.container {
+	display: grid;
+	grid-template-columns: minmax(var(--content-padding), auto) minmax(auto, 1600px) minmax(
+			var(--content-padding),
+			auto
+		);
+	grid-template-areas: '. content .';
+	& > :not(.not-content) {
+		grid-area: content;
+	}
+}

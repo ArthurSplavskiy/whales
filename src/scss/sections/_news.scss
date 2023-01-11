@@ -1,0 +1,129 @@
+.s-news {
+	max-width: 100vw;
+	color: white;
+	position: relative;
+	padding: 80px 0 80px 0;
+	overflow: hidden;
+	@media (max-width: $mobile) {
+		padding: 72px 0;
+	}
+	&-black {
+		color: black;
+		.page-title {
+			margin-bottom: 32px !important;
+		}
+		.news-cart {
+			background: none;
+			border: none;
+			h4 {
+				color: black;
+			}
+			&-details:before {
+				background: #ededef;
+			}
+			&-link {
+				&:hover {
+					color: $orange;
+					svg {
+						fill: $orange;
+					}
+				}
+			}
+		}
+		.news-slider-btn {
+			@media (max-width: $mobile) {
+				svg {
+					fill: $blue;
+				}
+				&:hover {
+					svg {
+						fill: white;
+					}
+				}
+			}
+		}
+	}
+	&-content {
+		@media (max-width: $mobile) {
+			padding: 0 !important;
+			border-color: transparent !important;
+		}
+	}
+	.page-title {
+		margin-bottom: 64px;
+		@media (max-width: $mobile) {
+			margin-bottom: 32px;
+		}
+	}
+	.news-slider {
+		position: relative;
+		overflow: visible !important;
+		.swiper-slide {
+			transition: $transition;
+		}
+		.swiper-slide-prev {
+			@media (max-width: 1920px) {
+				pointer-events: none;
+				opacity: 0 !important;
+			}
+		}
+		.swiper-slide-active {
+			@media (min-width: $tablet) {
+				flex: 0 0 40%;
+			}
+		}
+		&-controls {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 40px;
+		}
+		&-btn {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 88px;
+			height: 88px;
+			border-radius: 100%;
+			background: $light-blue;
+			cursor: pointer;
+			transition: $transition;
+			@media (max-width: $mobile) {
+				width: 56px;
+				height: 56px;
+				border: 1px solid $orange;
+				background: transparent;
+				svg {
+					width: 14px;
+					fill: $orange;
+				}
+				&:hover {
+					filter: none !important;
+					background: $orange;
+					svg {
+						fill: white;
+					}
+				}
+			}
+			&-prev {
+				svg {
+					transform: rotate(-180deg);
+				}
+				@media (min-width: $mobile) {
+					display: none;
+				}
+			}
+			&-next {
+				@media (min-width: $mobile) {
+					position: absolute;
+					top: 25%;
+					right: 20%;
+					z-index: 2;
+				}
+			}
+			&:hover {
+				filter: brightness(0.8);
+			}
+		}
+	}
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{ "title":"Up Trading" })
+	<body>
+		@@include('html/_preloader-markup.htm',{})
+		<div class="wrapper">
+			<a href="index.html" target="_blank">index</a>
+			<a href="service1.html" target="_blank">service1</a>
+			<a href="service2.html" target="_blank">service2</a>
+			<a href="service3.html" target="_blank">service3</a>
+			<a href="terms-of-use.html" target="_blank">privacy-policy</a>
+			<a href="blog.html" target="_blank">blog</a>
+			<a href="article.html" target="_blank">article</a>
+			<a href="404.html" target="_blank">404</a>
+		</div>
+		<style>
+			.wrapper {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				padding: 40px 12px;
+				background: black;
+			}
+			a {
+				margin: 20px;
+				font-size: 42px;
+			}
+			a:hover {
+				color: blue;
+			}
+		</style>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

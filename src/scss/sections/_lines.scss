@@ -1,0 +1,56 @@
+.s-lines {
+	font-weight: 700;
+	font-size: 120px;
+	line-height: 120px;
+	overflow: hidden;
+	@media (max-width: $mobile) {
+		font-size: 64px;
+		line-height: 64px;
+	}
+	&-line {
+		display: flex;
+		align-items: center;
+		white-space: nowrap;
+		&:first-child {
+			@media (max-width: $mobile) {
+				margin-left: -28%;
+			}
+			span {
+				&:nth-child(3n) {
+					color: $light-blue;
+				}
+			}
+		}
+		&:nth-child(2) {
+			color: $orange;
+			margin-left: 28%;
+			@media (max-width: $mobile) {
+				margin-left: 10%;
+			}
+		}
+	}
+	&-dot {
+		flex: 0 0 40px;
+		align-self: center;
+		margin: 0 28px;
+		width: 40px;
+		height: 40px;
+		border-radius: 100%;
+		background: #61616a;
+		@media (max-width: $mobile) {
+			flex: 0 0 24px;
+			margin: 0 8px;
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+.on-windows {
+	.s-lines-dot {
+		margin-top: 30px;
+		@media (max-width: $mobile) {
+			margin-top: 10px;
+		}
+	}
+}

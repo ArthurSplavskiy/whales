@@ -1,0 +1,122 @@
+.s-about {
+	overflow: hidden;
+	.container {
+		position: relative;
+	}
+	.s-headline {
+		.page-text-mid {
+			color: #ededef;
+		}
+		.page-text {
+			color: #d9d9dc;
+		}
+	}
+	&-map {
+		position: absolute;
+		top: 0;
+		right: -5%;
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
+		&-mobile {
+			display: none;
+			@media (max-width: $mobileSmall) {
+				display: block;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				top: -4%;
+				left: 0;
+				right: 0;
+				//transform: translate(-51%, -50%) scale(1);
+			}
+		}
+	}
+	&-content {
+		position: relative;
+		z-index: 2;
+	}
+	&-numbers {
+		margin-top: 130px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 104px;
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 24px;
+			row-gap: 64px;
+		}
+		@media (max-width: $mobileSmall) {
+			margin-top: 390px;
+			grid-template-columns: 1fr;
+		}
+	}
+	&-number {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 120px;
+		div {
+			font-weight: 700;
+			font-size: 72px;
+			line-height: 100%;
+			position: relative;
+			margin-bottom: 16px;
+			transition: $transition;
+			&:hover {
+				color: $orange;
+				font-size: 96px;
+				line-height: 80px;
+				@media (max-width: $mobile) {
+					font-size: 64px;
+				}
+				&:before {
+					top: -34px;
+					height: 4px;
+					background: $orange;
+					@media (max-width: $mobile) {
+						top: -16px;
+					}
+				}
+				& ~ span {
+					font-size: 18px;
+					color: white;
+				}
+			}
+			@media (max-width: $mobileSmall) {
+				font-size: 64px;
+				margin-bottom: 8px;
+				color: $orange;
+			}
+			&:before {
+				content: '';
+				width: 88px;
+				height: 1px;
+				background: white;
+				position: absolute;
+				top: -24px;
+				left: 50%;
+				transform: translateX(-50%);
+				transition: $transition;
+				@media (max-width: $mobileSmall) {
+					top: -16px;
+					height: 4px;
+					background: $orange;
+				}
+			}
+		}
+		span {
+			text-align: center;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 120%;
+			color: #a2a2a7;
+			transition: $transition;
+			@media (max-width: $mobileSmall) {
+				font-size: 18px;
+				color: white;
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+.s-articles {
+	padding: 80px 0;
+	@media (max-width: $mobile) {
+		padding: 48px 0;
+	}
+	.s-headline {
+		margin-bottom: 32px;
+		@media (max-width: $mobile) {
+			margin-bottom: 24px;
+		}
+	}
+}
