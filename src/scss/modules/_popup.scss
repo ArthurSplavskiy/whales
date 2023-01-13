@@ -23,7 +23,8 @@
 		display: flex;
 		z-index: 9999;
 		.popup-content {
-			transform: scale(1);
+			transform: translate(0);
+			opacity: 1;
 		}
 	}
 
@@ -47,7 +48,8 @@
 		position: relative;
 		overflow: hidden;
 		transition: all 0.5s ease;
-		transform: scale(0);
+		transform: translateY(20px);
+		opacity: 0;
 		background: $primary-black;
 		@media (min-width: $tablet) {
 			margin: 100px auto 0 auto;
@@ -62,53 +64,6 @@
 
 	&-close {
 		cursor: pointer;
-	}
-
-	.popup-form-submit-row {
-		margin-top: 40px;
-		display: grid;
-		align-items: center;
-		grid-template-columns: auto 1fr;
-		column-gap: 40px;
-		row-gap: 10px;
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 20px;
-		text-align: right;
-		color: #a8a5a8;
-		@media (max-width: $mobile) {
-			margin-top: 24px;
-			grid-template-columns: 1fr;
-			text-align: center;
-		}
-		a {
-			transition: $transition;
-			text-decoration: underline;
-			&:hover {
-				text-decoration: none;
-			}
-		}
-	}
-
-	fieldset {
-		position: relative;
-	}
-
-	input {
-		width: 100%;
-		outline: none;
-		padding: 16px 0;
-		border-bottom: 1px solid #585c62;
-		&:not(:last-child) {
-			margin-bottom: 8px;
-		}
-		@include placeholder-content {
-			font-weight: 500;
-			font-size: 14px;
-			line-height: 14px;
-			text-transform: uppercase;
-			color: #a4a4aa;
-		}
 	}
 }
 
@@ -139,50 +94,34 @@
 	}
 }
 
-.file__input {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	cursor: pointer;
-	z-index: 10;
-	&.full ~ .icon-pin {
-		z-index: 11;
-		.cross-icon {
-			display: block;
-		}
-		.pin-icon {
-			display: none;
+#popup-callback {
+	.popup-content {
+		max-width: 648px;
+		border-radius: 20px;
+		padding: 40px;
+		position: relative;
+		overflow: visible;
+		@media (max-width: $mobile) {
+			padding: 24px;
 		}
 	}
-}
-.file__button {
-	display: flex;
-	align-items: center;
-	padding: 22px 0 16px 0;
-	border-bottom: 1px solid #585c62;
-
-	.message-text {
-		overflow: hidden;
-		padding-right: rem(32);
-		display: block;
-
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 14px;
-		text-transform: uppercase;
-		color: #a4a4aa;
+	.popup-close {
+		position: absolute;
+		top: 44px;
+		right: 40px;
+		@media (max-width: $mobile) {
+			top: 28px;
+			right: 20px;
+		}
 	}
-}
-.icon-pin {
-	position: absolute;
-	top: 30px;
-	right: 0;
-	transform: translate(0, -50%);
-	cursor: pointer;
-	.cross-icon {
-		display: none;
+	h4 {
+		font-size: 32px;
+		line-height: 32px;
+	}
+	.form {
+		margin-top: 56px;
+		@media (max-width: $mobile) {
+			margin-top: 40px;
+		}
 	}
 }

@@ -1,67 +1,107 @@
-.callback-form {
+.form {
 	display: flex;
 	flex-direction: column;
-	&-item {
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 14px;
-		position: relative;
-		&:not(:last-child) {
-			margin-bottom: 24px;
+	align-items: center;
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 'input1 input2' 'input3 input3' 'textarea textarea';
+		column-gap: 24px;
+		row-gap: 32px;
+		width: 100%;
+		max-width: 100%;
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+			grid-template-areas: 'input1' 'input2' 'input3' 'textarea';
 		}
+	}
+	&__item {
+		position: relative;
+		height: 32px;
+		border-bottom: 1px solid $white;
+		transition: border-color 0.3s ease;
+
+		&:nth-child(1) {
+			grid-column: input1;
+		}
+		&:nth-child(2) {
+			grid-column: input2;
+		}
+		&:nth-child(3) {
+			grid-column: input3;
+		}
+
 		&._error {
-			input {
-				border-color: $red;
+			border-color: $red;
+			.content-name {
+				color: $red !important;
 			}
 		}
-		input {
-			width: 100%;
-			height: 48px;
-			color: white;
-			outline: none;
-			border: 1px solid #61616a;
-			border-radius: 10px;
-			background: transparent;
-			padding: 0 10px;
 
-			// @include placeholder-content {
-			// 	font-weight: 500;
-			// 	padding-bottom: 16px;
-			// }
+		input {
+			height: 100%;
+			width: 100%;
+			background: none;
+			outline: none;
+			color: $white;
 		}
-		label {
-			display: block;
-			color: #d9d9dc;
-			font-weight: 500;
-			font-size: 14px;
-			line-height: 14px;
-			margin-bottom: 8px;
+		&_textarea {
+			height: 32px;
+			grid-column: textarea;
+			.form__error {
+				margin-top: -4px;
+			}
 		}
 		textarea {
-			font-family: 'Gilroy';
+			font-family: 'NeueHaasDisplay', sans-serif;
+			// position: absolute;
+			// top: 0;
+			// left: 0;
+			// right: 0;
+			// bottom: 0;
 			width: 100%;
-			height: 90px;
-			background: transparent;
-			border-radius: 10px;
-			resize: none;
-			padding: 16px;
-			border: 1px solid #61616a;
-			color: white;
+			height: 100%;
+			padding-top: 4px;
 			outline: none;
+			resize: none;
+			background: transparent;
+			color: $white;
+		}
+		// * FLOAT LABELS
+		label {
+			position: absolute;
+			bottom: 0%;
+			left: 0%;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+		}
+		.content-name._active {
+			transform: translateY(-100%);
+		}
+		.content-name {
+			font-family: 'NeueHaasDisplay', sans-serif;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 16px;
+			color: $black-50;
+			transform: translateX(0%);
+			position: absolute;
+			transition: color 0.3s ease, transform 0.3s ease;
 		}
 	}
 	button {
-		display: inline-flex;
-		background: transparent;
-		transition: $transition !important;
+		margin-top: 48px;
+		@media (max-width: $mobile) {
+			margin-top: 40px;
+		}
 	}
-}
 
-.form__error {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	font-size: 12px;
-	margin-top: 4px;
-	color: $red;
+	// * ERROR
+	&__error {
+		font-family: 'NeueHaasDisplay', sans-serif;
+		margin-top: 2px;
+		font-size: 12px;
+		color: $red;
+	}
 }

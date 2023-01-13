@@ -5,7 +5,8 @@ import {
 	_slideDown,
 	_slideToggle,
 	setPhoneMask,
-	setFileInputs
+	setFileInputs,
+	setFloatLabels
 } from '../utils/functions.js';
 // Модуль попапа
 import { popup } from '../modules/popup.js';
@@ -29,7 +30,7 @@ export function formFieldsInit() {
 	//setPhoneMask();
 	//formViewpass();
 	//setDateMask();
-	//setFloatLabels();
+	setFloatLabels();
 	setFileInputs();
 
 	if (formFields.length) {

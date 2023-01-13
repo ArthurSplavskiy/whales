@@ -90,20 +90,18 @@ function createHeroVideo() {
 	}
 }
 
-import { popup } from '../modules/popup.js';
-
 export const heroVideoHover = (x, y) => {
 	const wrapperWidth = videoWrapper.offsetWidth;
 	const wrapperHeight = 412;
 	const xPercent = +Number((x * 100) / wrapperWidth / 100).toFixed(2);
 	const yPercent = +Number((y * 100) / wrapperHeight / 100).toFixed(2);
-	console.log('xPercent', xPercent);
-	console.log('yPercent', yPercent);
+
 	if (xPercent < 0.1 || xPercent > 0.9 || yPercent < 0.1 || yPercent > 0.9) {
 		videoWrapper.classList.add('reset');
 	} else {
 		videoWrapper.classList.remove('reset');
 	}
+
 	maskRects[0]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
 	maskRects[1]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
 	maskRects[2]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);

@@ -49,11 +49,11 @@
 			border-radius: 100%;
 			transition: $transition;
 			background: $primary-gradient;
-			//background-repeat: no-repeat;
 			z-index: 2;
 			cursor: pointer;
 			position: relative;
 			&:hover {
+				//background-repeat: no-repeat;
 				background-position: 64px;
 				div {
 					width: 50px;
@@ -189,6 +189,42 @@
 			&:nth-child(11) {
 				display: none;
 			}
+		}
+	}
+	&-title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 40px;
+		@media (max-width: $tablet) {
+			align-items: baseline;
+			flex-direction: column;
+		}
+	}
+	&-text {
+		max-width: 424px;
+		margin: 0 0 0 32px;
+		@media (max-width: $tablet) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 60px;
+			align-items: center;
+			max-width: 100%;
+			margin: 32px 0 0 0;
+		}
+		@media (max-width: $mobile) {
+			margin: 16px 0 0 0;
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
+	}
+	&-p {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 16px;
+		margin-bottom: 40px;
+		@media (max-width: $tablet) {
+			margin-bottom: 0;
 		}
 	}
 }

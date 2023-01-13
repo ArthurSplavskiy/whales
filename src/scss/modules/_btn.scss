@@ -5,6 +5,7 @@ button {
 }
 
 .btn {
+	font-family: 'Anton', 'NeueHaasDisplay', sans-serif;
 	padding: 17px 48px 15px 48px;
 	border-radius: 80px;
 	display: inline-flex;
@@ -15,13 +16,10 @@ button {
 	transition: $transition;
 	white-space: nowrap;
 	cursor: pointer;
-	@media (max-width: $tablet) {
-		padding: 13px 46px 13px 46px;
-		font-size: 14px;
-	}
+
 	@media (max-width: $mobile) {
-		padding: 10px 24px 10px 24px;
-		font-size: 12px;
+		padding: 16px 48px;
+		font-size: 14px;
 	}
 
 	&:active {
@@ -36,6 +34,55 @@ button {
 		}
 		&:disabled {
 			background: $ohra-disabled;
+		}
+
+		@media (max-width: $tablet) {
+			padding: 13px 46px 13px 46px;
+			font-size: 14px;
+		}
+		@media (max-width: $mobile) {
+			padding: 10px 24px 10px 24px;
+			font-size: 12px;
+		}
+	}
+
+	&-gradient {
+		color: $white;
+		background-image: linear-gradient(70deg, #ff01c7 0%, #3c00c3 50%, #ff01c7 100%);
+		background-size: 250% 100%;
+		background-position: 0% 0;
+		transition: background-position 0.5s ease-out;
+		@media (max-width: $mobile) {
+			padding: 16px 48px;
+			font-size: 14px;
+		}
+
+		&:hover {
+			background-position: -100% 0;
+		}
+	}
+
+	&-underline {
+		position: relative;
+		text-decoration: none;
+		transition: $animate;
+		&::before {
+			content: '';
+			position: absolute;
+			display: block;
+			left: 0;
+			bottom: -2px;
+			width: 100%;
+			height: 2px;
+			background: $white;
+			transform-origin: 100% 0;
+			transition: transform $animate;
+			transform: scaleX(0);
+		}
+
+		&:hover::before {
+			transform: scaleX(1);
+			transform-origin: 0 0;
 		}
 	}
 }

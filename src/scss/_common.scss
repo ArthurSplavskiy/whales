@@ -11,7 +11,7 @@
 
 html {
 	min-height: 100vh;
-	background: white;
+	background: $primary-black;
 	&.lock {
 		overflow: hidden;
 	}
@@ -56,7 +56,7 @@ body {
 	}
 }
 
-[class*='__image-ibg'] {
+[class*='-image-ibg'] {
 	position: relative;
 
 	img {
@@ -198,6 +198,10 @@ select:-webkit-autofill:focus {
 	display: flex;
 	justify-content: center;
 	margin-top: 24px;
+}
+
+.gradient-color {
+	@include gradient-text($primary-gradient);
 }
 
 ._hold {

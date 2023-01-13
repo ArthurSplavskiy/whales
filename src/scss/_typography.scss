@@ -46,73 +46,65 @@ strong {
 	color: inherit;
 }
 
-.page-title {
-	font-weight: 700;
-	font-size: 40px;
-	line-height: 160%;
+h1 {
+	font-size: 120px;
+	line-height: 100%;
+	text-transform: uppercase;
 	@media (max-width: $tablet) {
-		font-size: 32px;
-	}
-	@media (max-width: $mobile) {
-		font-size: 24px;
+		font-size: 88px;
 	}
 }
 
-.page-text-mid {
-	font-weight: 600;
-	font-size: 18px;
-	line-height: 32px;
-	@media (max-width: $mobile) {
-		font-size: 14px;
-		line-height: 24px;
+h2 {
+	font-weight: 400;
+	font-size: 88px;
+	line-height: 100%;
+	text-transform: uppercase;
+	@media (max-width: $tablet) {
+		font-size: 64px;
+		line-height: 68px;
+	}
+}
+
+h3 {
+	font-size: 48px;
+	line-height: 100%;
+	text-transform: uppercase;
+	@media (max-width: $tablet) {
+		font-size: 32px;
+	}
+	@media (max-width: $tablet) {
+		font-size: 48px;
+	}
+}
+
+h4 {
+	font-size: 32px;
+	line-height: 100%;
+	text-transform: uppercase;
+	@media (max-width: $tablet) {
+		font-size: 18px;
 	}
 }
 
 .page-text {
+	font-family: 'NeueHaasDisplay', sans-serif;
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 24px;
 }
 
-%text-16 {
-	font-weight: 500;
-	font-size: 16px;
-	color: #434346;
-}
-
-.up-title {
-	display: table;
-	font-weight: 700;
-	font-size: 15px;
-	line-height: 120%;
-	text-transform: uppercase;
-	background: linear-gradient(90deg, #03c3cf 0%, #3ef4ff 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-	text-fill-color: transparent;
-	margin-bottom: 15px;
-
-	&_blue {
-		background: linear-gradient(90deg, #4576eb 0%, #2a57c4 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		text-fill-color: transparent;
+.text-24 {
+	font-family: 'NeueHaasDisplay', sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 36px;
+	@media (max-width: $tablet) {
+		font-size: 18px;
+		line-height: 24px;
 	}
-
-	&_yellow {
-		background: linear-gradient(90deg, #efc644 0%, #ffdd70 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		text-fill-color: transparent;
+	@media (max-width: $mobile) {
+		font-size: 14px;
+		line-height: 24px;
 	}
-}
-
-h3 {
-	font-weight: 700;
-	font-size: 20px;
-	line-height: 120%;
-	color: $light-blue;
 }

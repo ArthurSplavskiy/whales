@@ -16,18 +16,20 @@ const $pageMenuBtn = document.querySelector('[data-menu-btn]');
 export const documentClick = (e) => {
 	const targetElement = e.target;
 
-	// POPUP ===================
-	const $popupTriggerOpen = functions.isTarget(targetElement, '[data-popup-open="cv"]');
-	if ($popupTriggerOpen) {
-		$popupCV && popup.open('#popup-cv');
+	const $videoPopupBtn = functions.isTarget(targetElement, '[data-popup-open="#popup-video"]');
+	if ($videoPopupBtn) {
+		popup.open('#popup-video');
 		if (bodyLockStatus) {
 			bodyLockToggle();
 		}
 	}
 
-	const $videoPopupBtn = functions.isTarget(targetElement, '[data-popup-open="#popup-video"]');
-	if ($videoPopupBtn) {
-		popup.open('#popup-video');
+	const $callbackPopupBtn = functions.isTarget(
+		targetElement,
+		'[data-popup-open="#popup-callback"]'
+	);
+	if ($callbackPopupBtn) {
+		popup.open('#popup-callback');
 		if (bodyLockStatus) {
 			bodyLockToggle();
 		}
