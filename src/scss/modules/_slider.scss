@@ -35,14 +35,14 @@
 	bottom: -20px;
 }
 
-.sliders-controls {
-	margin-top: 32px;
+.slider-nav {
 	display: grid;
-	grid-template-columns: 56px 56px;
-	gap: 16px;
-	@media (max-width: $mobile) {
+	grid-template-columns: 64px 30px 64px;
+	align-items: center;
+	gap: 44px;
+	@media (max-width: $tablet) {
 		width: 100%;
-		grid-template-columns: 56px 1fr 56px;
+		grid-template-columns: 48px 1fr 48px;
 		grid-template-areas: 'fb . sb';
 		button {
 			&:first-child {
@@ -53,40 +53,40 @@
 			}
 		}
 	}
+	span {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 100%;
+		margin: 0;
+	}
+	.swiper-pagination-current {
+		color: $black-30;
+		margin-right: 5px;
+	}
+	.swiper-pagination-total {
+		margin-left: 5px;
+	}
 	button {
 		@extend %flex-center;
-		width: 56px;
-		height: 56px;
+		width: 64px;
+		height: 64px;
 		border-radius: 100%;
-		border: 1px solid $orange;
+		border: 1px solid $white;
 		cursor: pointer;
-		background: white;
 		transition: $transition;
-		svg {
-			transition: $transition;
-			fill: $orange;
-		}
-		&:first-child {
-			svg {
-				transform: rotate(180deg);
-			}
+		background: none;
+		color: $white;
+		@media (max-width: $tablet) {
+			width: 48px;
+			height: 48px;
 		}
 		&._disabled {
 			pointer-events: none;
 			opacity: 0.6;
 		}
 		&:hover {
-			background: $orange;
-			svg {
-				fill: white;
-			}
-		}
-	}
-	&-box {
-		display: flex;
-		justify-content: flex-end;
-		@media (max-width: $mobile) {
-			justify-content: space-between;
+			background: $white;
+			color: $primary-black;
 		}
 	}
 }

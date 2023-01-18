@@ -36,21 +36,36 @@
 			align-items: center;
 			justify-content: center;
 			position: fixed;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			background: white;
-			z-index: 99999;
+			inset: 0 0 0 0;
+			z-index: 99998;
+			background: #3c354f;
 			transition: opacity 1s;
+			transition-delay: 1s;
+		}
+
+		.preloader-circle {
+			width: 20px;
+			height: 20px;
+			background: #1b1a1d;
+			border-radius: 100%;
+			position: fixed;
+			top: 50%;
+			left: 60%;
+			z-index: 99999;
+			animation: scalePreloaderCircle 1s ease-in-out forwards;
 		}
 
 		.preloader_hide {
 			opacity: 0;
 		}
 
-		.preloader_hide {
-			opacity: 0;
+		@keyframes scalePreloaderCircle {
+			0% {
+				transform: scale(1);
+			}
+			100% {
+				transform: scale(180);
+			}
 		}
 	</style>
 </head>

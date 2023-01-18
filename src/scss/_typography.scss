@@ -79,6 +79,7 @@ h3 {
 }
 
 h4 {
+	font-family: 'Anton', 'NeueHaasDisplay', sans-serif;
 	font-size: 32px;
 	line-height: 100%;
 	text-transform: uppercase;
@@ -87,9 +88,18 @@ h4 {
 	}
 }
 
+h5 {
+	font-size: 18px;
+	line-height: 100%;
+	text-transform: uppercase;
+	@media (max-width: $mobileSmall) {
+		font-size: 12px;
+	}
+}
+
 .page-text {
 	font-family: 'NeueHaasDisplay', sans-serif;
-	font-weight: 500;
+	font-weight: 400;
 	font-size: 14px;
 	line-height: 24px;
 }

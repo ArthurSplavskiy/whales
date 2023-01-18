@@ -273,7 +273,7 @@ function funPreloader() {
 	el.preloader.addClass(el.preloaderCl);
 	setTimeout(function () {
 		animateStart?.();
-	}, 400);
+	}, 900);
 	setTimeout(function () {
 		el.preloader.remove();
 	}, 1000);
@@ -282,6 +282,7 @@ function funPreloader() {
 $(window).on('load', function () {
 	//after full load
 	//hide preloader after load
+	const preloaderAnimationDuration = 4000;
 	const firstLoad = document.cookie
 		.split(';')
 		.filter((c) => c.includes('firstLoad'))?.[0]
@@ -290,7 +291,7 @@ $(window).on('load', function () {
 	if (!Boolean(firstLoad) && !el.preloader.hasClass(el.preloaderCl)) {
 		setTimeout(() => {
 			funPreloader();
-		}, 4000);
+		}, preloaderAnimationDuration);
 	} else {
 		funPreloader();
 	}
@@ -304,11 +305,6 @@ $(window).on('load', function () {
 
 el.document.ready(function () {
 	'use strict';
-
-	//preloader show time limit after document ready
-	// setTimeout(function () {
-	//   if (!el.preloader.hasClass(el.preloaderCl)) funPreloader();
-	// }, 3000);
 
 	document.body.classList.add('ontouchstart' in document.documentElement ? 'touch' : 'no-touch');
 

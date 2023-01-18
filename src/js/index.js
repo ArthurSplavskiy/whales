@@ -7,10 +7,12 @@ import './core/modules/hoverTabs.js';
 import '../scss/style.scss';
 import { numberGrover } from './core/modules/number-grover.js';
 import { documentClick } from './core/events/click.js';
+import { documentKeyDown } from './core/events/keydown.js';
 import { windowResize } from './core/events/resize.js';
 import { windowMousemove } from './core/events/mouseMove.js';
 import ScrollObserver from './core/utils/observer.js';
 import createHeroVideo from './core/modules/heroVideo.js';
+import Preloader from './core/modules/preloader.js';
 
 const $preloader = document.querySelector('.preloader');
 
@@ -53,17 +55,19 @@ const init = () => {
 
 	createHeroVideo();
 
-	new ScrollObserver({
-		element: '.s-about-numbers',
-		animationIn: () => numberGrover(90),
-		observerOptions: {
-			threshold: 0.1
-		}
-	});
+	//new Preloader();
 
+	// new ScrollObserver({
+	// 	element: '.s-about-numbers',
+	// 	animationIn: () => numberGrover(90),
+	// 	observerOptions: {
+	// 		threshold: 0.1
+	// 	}
+	// });
 	hidePreloaderByCookie(document.cookie);
 
 	document.addEventListener('click', documentClick);
+	document.addEventListener('keydown', documentKeyDown);
 	window.addEventListener('resize', windowResize);
 	if ($heroVideoWrapper) {
 		$heroVideoWrapper.addEventListener('mousemove', windowMousemove);

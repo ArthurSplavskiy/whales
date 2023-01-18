@@ -213,3 +213,40 @@ select:-webkit-autofill:focus {
 		display: none;
 	}
 }
+
+.s-title {
+	margin-bottom: 56px;
+	@media (min-width: $mobile) {
+		margin-bottom: 40px;
+	}
+}
+
+.s-offset {
+	margin-top: 160px;
+	@media (max-width: $tablet) {
+		margin-top: 80px;
+	}
+}
+
+.social-list {
+	display: flex;
+	li {
+		padding: 1px;
+		border-radius: 100%;
+		background: $primary-gradient;
+		&:not(:last-child) {
+			margin-right: 8px;
+		}
+	}
+	a {
+		@extend %flex-center;
+		width: 32px;
+		height: 32px;
+		border-radius: 100%;
+		background: $white;
+		color: $primary-black;
+		&:hover {
+			transform: scale(0.9);
+		}
+	}
+}

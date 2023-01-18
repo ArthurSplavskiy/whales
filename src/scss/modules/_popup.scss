@@ -51,9 +51,9 @@
 		transform: translateY(20px);
 		opacity: 0;
 		background: $primary-black;
-		@media (min-width: $tablet) {
-			margin: 100px auto 0 auto;
-		}
+		// @media (min-width: $tablet) {
+		// 	margin: 100px auto 0 auto;
+		// }
 		@media (max-width: $tablet) {
 			max-width: 648px;
 		}
@@ -112,6 +112,12 @@
 		@media (max-width: $mobile) {
 			top: 28px;
 			right: 20px;
+		}
+		img,
+		svg {
+			&:hover {
+				transform: scale(1.1);
+			}
 		}
 	}
 	h4 {

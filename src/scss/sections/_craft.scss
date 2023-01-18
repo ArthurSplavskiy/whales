@@ -1,0 +1,138 @@
+.s-craft {
+	&-content {
+		display: grid;
+		grid-template-columns: 1fr 660px;
+		@media (max-width: 1200px) {
+			grid-template-columns: 1fr;
+		}
+		.s-title {
+			margin-bottom: 64px;
+			@media (max-width: $mobile) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+	&-text {
+		min-width: 0;
+		@media (max-width: 1200px) {
+			order: 2;
+		}
+		.slider-nav {
+			margin-top: 40px;
+			@media (max-width: $mobile) {
+				margin-top: 32px;
+			}
+		}
+	}
+	&-image {
+		min-width: 0;
+		@media (max-width: 1200px) {
+			margin-bottom: 24px;
+		}
+		.s-craft-rect-mask {
+			&:nth-child(1) {
+				transform-origin: 0 100px;
+				@media (max-width: $mobile) {
+					y: 50px;
+					height: 165px;
+				}
+			}
+			&:nth-child(2) {
+				transform-origin: 100% 100%;
+				@media (max-width: $mobile) {
+					height: 278px;
+				}
+			}
+			&:nth-child(3) {
+				transform-origin: 0 185px;
+				@media (max-width: $mobile) {
+					y: 95px;
+					height: 165px;
+				}
+			}
+		}
+	}
+	.craft-text {
+		h2 {
+			@include gradient-text($primary-gradient);
+			margin-bottom: 24px;
+			max-width: 648px;
+			@media (max-width: $tablet) {
+				max-width: 100%;
+			}
+		}
+		p {
+			max-width: 424px;
+			@media (max-width: $tablet) {
+				max-width: 100%;
+			}
+		}
+	}
+	.craft-image {
+		width: 660px;
+		height: 540px;
+		@media (max-width: 1200px) {
+			width: 100%;
+		}
+		@media (max-width: $mobile) {
+			height: 278px;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&-svg-mask {
+		@extend %hide-el;
+	}
+	&-rect-mask {
+		rx: 20px;
+		@media (max-width: $tablet) {
+			rx: 8px;
+		}
+	}
+}
+
+.animationIn {
+	.s-craft-rect-mask {
+		animation: imageChange 0.8s ease-out forwards;
+	}
+	.craft-text h2 {
+		animation: textChange 0.8s ease-out forwards;
+	}
+	.craft-text p {
+		animation: textChange 0.8s ease-out forwards;
+	}
+}
+
+.animationOut {
+	.s-craft-rect-mask {
+		animation: imageChange 0.8s ease-out forwards reverse;
+	}
+	.craft-text h2 {
+		animation: textChange 0.8s ease-out forwards reverse;
+	}
+	.craft-text p {
+		animation: textChange 0.8s ease-out forwards reverse;
+	}
+}
+
+@keyframes imageChange {
+	0% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}
+@keyframes textChange {
+	0% {
+		opacity: 0;
+		transform: translateY(10px) scaleY(1.05);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scaleY(1);
+	}
+}

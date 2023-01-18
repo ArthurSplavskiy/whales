@@ -1,8 +1,4 @@
 .s-about {
-	padding-top: 180px;
-	@media (max-width: $mobile) {
-		padding-top: 96px;
-	}
 	&-content {
 		display: grid;
 		grid-template-columns: 1fr;

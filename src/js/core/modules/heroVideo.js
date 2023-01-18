@@ -8,6 +8,7 @@ function createHeroVideo() {
 	if (videoWrapper) {
 		const svgMask = videoWrapper.querySelector('svg');
 		const svgRects = videoWrapper.querySelectorAll('[data-hero-rect]');
+		const svgCraft = document.querySelectorAll('[data-craft-rect]');
 		const wrapperWidth = videoWrapper.offsetWidth;
 		let wrapperHeight = 412;
 		if (window.innerWidth < 992) {
@@ -18,6 +19,31 @@ function createHeroVideo() {
 		}
 
 		svgMask.setAttribute('viewBox', `0 0 ${wrapperWidth} ${wrapperHeight}`);
+		svgCraft.forEach((svg) => {
+			svg.querySelectorAll('.s-craft-rect-mask').forEach((r, idx) => {
+				if (window.innerWidth < 1200) {
+					r.setAttribute('width', valueFromPercent(wrapperWidth, 32.48) + 'px');
+					if (idx === 0) {
+						r.setAttribute('x', '0');
+					}
+					if (idx > 0 && idx < 3) {
+						r.setAttribute(
+							'x',
+							(valueFromPercent(wrapperWidth, 32.48) + valueFromPercent(wrapperWidth, 0.85)) * idx +
+								'px'
+						);
+					}
+					if (idx === 3) {
+						r.setAttribute('x', wrapperWidth - valueFromPercent(wrapperWidth, 32.48) + 'px');
+					}
+				} else {
+					r.setAttribute('width', '214');
+					if (idx === 0) r.setAttribute('x', '0');
+					if (idx === 1) r.setAttribute('x', '222');
+					if (idx === 2) r.setAttribute('x', '444');
+				}
+			});
+		});
 		svgRects.forEach((r, idx, arr) => {
 			const elDifference =
 				valueFromPercent(wrapperWidth, 10.5) - valueFromPercent(wrapperWidth, 8.1);
@@ -102,17 +128,17 @@ export const heroVideoHover = (x, y) => {
 		videoWrapper.classList.remove('reset');
 	}
 
-	maskRects[0]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
-	maskRects[1]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
-	maskRects[2]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
-	maskRects[3]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
-	maskRects[4]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
-	maskRects[5]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
-	maskRects[6]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
-	maskRects[7]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
-	maskRects[8]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
-	maskRects[9]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
-	maskRects[10]?.style.setProperty('--scale-y', xPercent < 0.5 ? xPercent + 0.5 : xPercent);
+	maskRects[0]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
+	maskRects[1]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
+	maskRects[2]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
+	maskRects[3]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
+	maskRects[4]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
+	maskRects[5]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
+	maskRects[6]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.9 : xPercent + 0.5);
+	maskRects[7]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.8 : xPercent + 0.5);
+	maskRects[8]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.7 : xPercent + 0.5);
+	maskRects[9]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.6 : xPercent + 0.5);
+	maskRects[10]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.5 : xPercent + 0.5);
 };
 
 export default createHeroVideo;
