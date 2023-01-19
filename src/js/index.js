@@ -56,6 +56,7 @@ const init = () => {
 	createHeroVideo();
 
 	//new Preloader();
+	functions.addLottieAnimation('[data-lottie="bubble"]', 'others/lottie/bubble.json', true);
 
 	// new ScrollObserver({
 	// 	element: '.s-about-numbers',

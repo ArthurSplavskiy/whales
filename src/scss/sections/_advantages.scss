@@ -7,6 +7,15 @@
 			grid-template-columns: repeat(2, 1fr);
 			gap: 0;
 		}
+		&-head {
+			position: relative;
+			[data-lottie='bubble'] {
+				@extend %absolute-center;
+				width: 500px;
+				height: 500px;
+				z-index: 2;
+			}
+		}
 		&-number {
 			transition: $transition;
 			&:nth-child(1),
