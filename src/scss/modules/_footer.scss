@@ -27,11 +27,7 @@
 			display: flex;
 			gap: 8px;
 			li {
-				background: $primary-black;
 				@extend %flex-center;
-				width: 32px;
-				height: 32px;
-				border-radius: 50%;
 				position: relative;
 				&:before {
 					content: '';
@@ -39,7 +35,27 @@
 					width: 33px;
 					height: 33px;
 					border-radius: 50%;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
 					z-index: -1;
+				}
+				a {
+					@extend %flex-center;
+					width: 32px;
+					height: 32px;
+					border-radius: 100%;
+					background: $primary-black;
+					color: $white;
+					margin-bottom: 0 !important;
+					i {
+						margin-bottom: 0 !important;
+						transform: scale(0.8);
+					}
+					&:hover {
+						transform: scale(0.9);
+					}
 				}
 			}
 		}

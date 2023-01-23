@@ -1,0 +1,87 @@
+.s-stories {
+	&-grid {
+		//overflow: hidden;
+		padding-bottom: 124px;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		row-gap: 56px;
+		column-gap: 24px;
+		@media screen and (max-width: 768px) {
+			row-gap: 24px;
+			column-gap: 20px;
+		}
+		.stories-card {
+			will-change: transform;
+			position: relative;
+			flex: 1 1 calc(33.33% - 16px);
+			&:nth-child(2),
+			&:nth-child(5) {
+				top: 124px;
+				@media screen and (max-width: 768px) {
+					top: 0;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				flex: 1 1 calc(50% - 16px);
+				&:nth-child(even) {
+					top: 110px;
+				}
+			}
+
+			// &-down {
+			// 	animation: cardDown 1s linear infinite;
+			// 	animation-play-state: paused;
+			// 	animation-delay: calc(var(--scroll-stories) * -1s);
+			// }
+			// &-up {
+			// 	animation: cardUp 1s linear infinite;
+			// 	animation-play-state: paused;
+			// 	animation-delay: calc(var(--scroll) * -1s);
+			// }
+		}
+	}
+}
+
+.stories-card {
+	display: block;
+	&:hover {
+		img {
+			transform: scale(1.05);
+		}
+	}
+	&-image-ibg {
+		padding-bottom: 120%;
+		margin-bottom: 16px;
+		border-radius: 20px;
+		overflow: hidden;
+		img {
+			transition: 0.3s;
+		}
+		// img {
+		// 	position: absolute;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	top: 0;
+		// 	left: 0;
+		// 	object-fit: cover;
+		// 	transform: scaleY(1.2);
+		// }
+	}
+	h4 {
+		@include gradient-text($primary-gradient);
+		margin-bottom: 8px;
+		line-height: 120%;
+	}
+}
+
+// @keyframes cardUp {
+// 	to {
+// 		transform: translate3d(0, -50%, 0);
+// 	}
+// }
+// @keyframes cardDown {
+// 	to {
+// 		transform: translate3d(0, 50%, 0);
+// 	}
+// }

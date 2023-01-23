@@ -1,4 +1,5 @@
 .s-advantages {
+	overflow: hidden;
 	.numbers {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
@@ -9,11 +10,16 @@
 		}
 		&-head {
 			position: relative;
-			[data-lottie='bubble'] {
-				@extend %absolute-center;
-				width: 500px;
-				height: 500px;
+			[data-lottie] {
+				position: absolute;
+				top: 50%;
+				left: 40%;
+				transform: translate(-50%, -50%);
+				width: 400px;
+				height: 400px;
 				z-index: 2;
+				opacity: 0;
+				transition: $transition;
 			}
 		}
 		&-number {
@@ -91,6 +97,15 @@
 				}
 				.numbers-image-ibg {
 					opacity: 1;
+				}
+				[data-lottie] {
+					opacity: 1;
+				}
+				.numbers-head {
+					span,
+					h4 {
+						filter: blur(1px);
+					}
 				}
 			}
 		}

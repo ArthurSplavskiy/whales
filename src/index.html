@@ -5,6 +5,7 @@
 	<body class="p-home">
 		<div class="wrapper">
 			@@include('html/_preloader-markup.htm',{}) @@include('html/_header.htm',{})
+			@@include('html/_cursor.htm',{})
 			<main data-an="_fadeUp20">
 				<section class="s-hero" data-an="_fadeIn">
 					<div class="container">
@@ -163,6 +164,7 @@
 							<div class="numbers">
 								<div class="numbers-number">
 									<div class="numbers-head">
+										<div data-lottie="bubble-1"></div>
 										<span>4</span>
 										<h4>Countries</h4>
 									</div>
@@ -174,7 +176,7 @@
 								</div>
 								<div class="numbers-number">
 									<div class="numbers-head">
-										<div data-lottie="bubble"></div>
+										<div data-lottie="bubble-2"></div>
 										<span>80+</span>
 										<h4>global brands</h4>
 									</div>
@@ -186,6 +188,7 @@
 								</div>
 								<div class="numbers-number">
 									<div class="numbers-head">
+										<div data-lottie="bubble-3"></div>
 										<span>120</span>
 										<h4>projects</h4>
 									</div>
@@ -197,6 +200,7 @@
 								</div>
 								<div class="numbers-number">
 									<div class="numbers-head">
+										<div data-lottie="bubble-4"></div>
 										<span>20+</span>
 										<h4>persons in our team</h4>
 									</div>
@@ -707,57 +711,245 @@
 									<span>THIS IS THE</span><br />
 									WAY
 								</h2>
-								<a href="#" class="btn btn-gradient">Book a call</a>
+								<a href="#" class="btn btn-gradient" data-popup-open="#popup-callback"
+									>Book a call</a
+								>
 							</div>
 						</div>
 					</div>
 				</section>
-				<!-- <section class="s-partners s-white s-offset">
+				<section class="s-stories s-offset">
 					<div class="container">
-						<div class="s-partners-content s-border">
-							<div class="s-headline">
-								<h2 class="page-title" data-an="_fadeUp">Наші Партнери</h2>
-								<p class="page-text" data-an="_fadeUp">
-									UP Trading - компанія, що надає послуги з залізничної логістики, трейдингу зерна
-									та гуртового продажу добрив в Польщі. Працює у зв’язці з Most Logistic Terminal.
-								</p>
-							</div>
-							<div class="partners-slider" data-swiper="partners-slider" data-an="_fadeIn">
-								<div class="partners-slider__swiper">
-									<a href="#" class="partners-slider-slide">
-										<img src="img/ibm-logo.svg" alt="ibm" />
-									</a>
-									<a href="#" class="partners-slider-slide">
-										<img src="img/treeden.png" alt="treeden" />
-									</a>
-									<a href="#" class="partners-slider-slide">
-										<img src="img/agroloc.png" alt="agroloc" />
-									</a>
-									<a href="#" class="partners-slider-slide">
-										<img src="img/ibm-logo.svg" alt="ibm" />
-									</a>
-									<a href="#" class="partners-slider-slide">
-										<img src="img/treeden.png" alt="treeden" />
-									</a>
-									<a href="#" class="partners-slider-slide">
-										<img src="img/agroloc.png" alt="agroloc" />
-									</a>
-								</div>
-							</div>
-							<div class="sliders-controls-box">
-								<div class="sliders-controls">
-									<button data-swiper-control="partners-slider-prev">
-										<img src="img/interface/slider-arrow.svg" alt="prev" />
-									</button>
-									<button data-swiper-control="partners-slider-next">
-										<img src="img/interface/slider-arrow.svg" alt="next" />
-									</button>
-								</div>
+						<div class="s-stories-content">
+							<h3 class="s-title">WHALES STORIEs</h3>
+							<div class="s-stories-grid">
+								<a href="#" class="stories-card stories-card-down">
+									<div class="stories-card-image-ibg">
+										<img
+											src="img/stories/01.png"
+											alt="14 closed deals in 2 month for a real estate company" />
+									</div>
+									<h4>14 closed deals in 2 month for a real estate company</h4>
+									<p class="page-text">
+										We analyse your current assets, competitors, and points to grow
+									</p>
+								</a>
+								<a href="#" class="stories-card stories-card-up">
+									<div class="stories-card-image-ibg">
+										<img
+											src="img/stories/02.png"
+											alt="14 closed deals in 2 month for a real estate company" />
+									</div>
+									<h4>14 closed deals in 2 month for a real estate company</h4>
+									<p class="page-text">
+										We analyse your current assets, competitors, and points to grow
+									</p>
+								</a>
+								<a href="#" class="stories-card stories-card-down">
+									<div class="stories-card-image-ibg">
+										<img
+											src="img/stories/03.png"
+											alt="14 closed deals in 2 month for a real estate company" />
+									</div>
+									<h4>14 closed deals in 2 month for a real estate company</h4>
+									<p class="page-text">
+										We analyse your current assets, competitors, and points to grow
+									</p>
+								</a>
+								<a href="#" class="stories-card stories-card-down">
+									<div class="stories-card-image-ibg">
+										<img
+											src="img/stories/04.png"
+											alt="14 closed deals in 2 month for a real estate company" />
+									</div>
+									<h4>14 closed deals in 2 month for a real estate company</h4>
+									<p class="page-text">
+										We analyse your current assets, competitors, and points to grow
+									</p>
+								</a>
+								<a href="#" class="stories-card stories-card-up">
+									<div class="stories-card-image-ibg">
+										<img
+											src="img/stories/05.png"
+											alt="14 closed deals in 2 month for a real estate company" />
+									</div>
+									<h4>14 closed deals in 2 month for a real estate company</h4>
+									<p class="page-text">
+										We analyse your current assets, competitors, and points to grow
+									</p>
+								</a>
+								<a href="#" class="stories-card stories-card-down">
+									<div class="stories-card-image-ibg">
+										<img
+											src="img/stories/06.png"
+											alt="14 closed deals in 2 month for a real estate company" />
+									</div>
+									<h4>14 closed deals in 2 month for a real estate company</h4>
+									<p class="page-text">
+										We analyse your current assets, competitors, and points to grow
+									</p>
+								</a>
 							</div>
 						</div>
 					</div>
-				</section> -->
-
+				</section>
+				<section class="s-meet s-offset">
+					<div class="container">
+						<div class="s-meet-content">
+							<div class="s-headline">
+								<h2 class="page-title">Meet our work</h2>
+								<p class="text-24">You know these companies. And they use Whales solutions.</p>
+								<div class="btn btn-gradient" data-popup-open="#popup-callback">Book a call</div>
+							</div>
+							<div class="s-meet-grid">
+								<a href="#" class="meet-card meet-card-down">
+									<div>
+										<img src="img/companies/citrix.png" alt="citrix" />
+									</div>
+								</a>
+								<a href="#" class="meet-card meet-card-up meet-card-big">
+									<div>
+										<img src="img/companies/dropbox.png" alt="citrix" />
+									</div>
+								</a>
+								<a href="#" class="meet-card meet-card-down">
+									<div>
+										<img src="img/companies/c.png" alt="citrix" />
+									</div>
+								</a>
+								<a href="#" class="meet-card meet-card-up meet-card-big">
+									<div>
+										<img src="img/companies/ebay.png" alt="citrix" />
+									</div>
+								</a>
+								<a href="#" class="meet-card meet-card-down meet-card-big">
+									<div>
+										<img src="img/companies/dropbox.png" alt="citrix" />
+									</div>
+								</a>
+								<a href="#" class="meet-card meet-card-down meet-card-big">
+									<div>
+										<img src="img/companies/dropbox.png" alt="citrix" />
+									</div>
+								</a>
+								<a href="#" class="meet-card meet-card-up">
+									<div>
+										<img src="img/companies/citrix.png" alt="citrix" />
+									</div>
+								</a>
+								<a href="#" class="meet-card meet-card-down meet-card-big">
+									<div>
+										<img src="img/companies/dropbox.png" alt="citrix" />
+									</div>
+								</a>
+								<a href="#" class="meet-card meet-card-up">
+									<div>
+										<img src="img/companies/citrix.png" alt="citrix" />
+									</div>
+								</a>
+								<a href="#" class="meet-card meet-card-down">
+									<div>
+										<img src="img/companies/citrix.png" alt="citrix" />
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="s-contacts s-offset">
+					<div class="container">
+						<div class="s-contacts-content">
+							<div class="s-headline">
+								<h2 class="page-title">SAY HI</h2>
+							</div>
+							<div class="s-contacts-grid">
+								<ul class="menu-contacts">
+									<li>
+										<span>Our E-mail</span> <br />
+										<a href="mailto:email@example.com">email@example.com</a>
+									</li>
+									<li>
+										<span>Phone number</span> <br />
+										<a href="tel:+380680000000">(068) 000 00 00</a>
+									</li>
+									<li>
+										<span>Our adress</span> <br />
+										<span>123 Demo StreetNew York, NY 12345</span>
+									</li>
+									<li>
+										<span>Networks</span> <br />
+										<ul class="menu-contacts-social">
+											<li>
+												<a href="#"><i class="icon-insta"></i></a>
+											</li>
+											<li>
+												<a href="#"><i class="icon-facebook-2"></i></a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<form class="form" action="#" data-message="[data-popup='successPopup']" data-test>
+									<fieldset class="form__wrapper">
+										<div class="form__item" data-float-label>
+											<input type="text" name="name" data-required />
+											<label>
+												<span class="content-name">Name*</span>
+											</label>
+										</div>
+										<div class="form__item" data-float-label>
+											<input type="text" name="name" data-required />
+											<label>
+												<span class="content-name">Surname*</span>
+											</label>
+										</div>
+										<div class="form__item" data-float-label>
+											<input type="text" name="email" data-required="email" />
+											<label>
+												<span class="content-name">E-mail*</span>
+											</label>
+										</div>
+										<div class="form__item form__item_textarea" data-float-label>
+											<textarea name="message" data-required></textarea>
+											<label>
+												<span class="content-name">Your message *</span>
+											</label>
+										</div>
+									</fieldset>
+									<button type="submit" class="btn btn-gradient">Send</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="s-subscribe s-offset">
+					<div class="container">
+						<div class="s-subscribe-content">
+							<div class="s-subscribe-head">
+								<h3>STAY UPDATEd</h3>
+								<p class="page-text">
+									Sign up to be the first to find out when we add new classes, amenities, and more.
+									We respect your privacy and will never share your information with any third-party
+									vendors.
+								</p>
+							</div>
+							<form
+								class="form form-subscribe"
+								action="#"
+								data-message="[data-popup='successPopup']"
+								data-test>
+								<fieldset>
+									<div class="form__item" data-float-label>
+										<input type="text" name="email" data-required="email" />
+										<label>
+											<span class="content-name">E-mail*</span>
+										</label>
+									</div>
+								</fieldset>
+								<button type="submit" class="btn"><span class="btn-underline">Send</span></button>
+							</form>
+						</div>
+					</div>
+				</section>
 				<!-- <section class="s-contacts s-blue s-offset">
 					<div class="container">
 						<div class="s-contacts-content s-border" data-an="_fadeIn">

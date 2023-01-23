@@ -96,6 +96,17 @@
 			margin-top: 40px;
 		}
 	}
+	&-subscribe {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 45px;
+		.btn {
+			color: $white;
+			margin: 0;
+			padding: 0;
+			background: none;
+		}
+	}
 
 	// * ERROR
 	&__error {

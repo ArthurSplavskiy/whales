@@ -55,6 +55,27 @@
 				color: $white;
 			}
 		}
+		&-social {
+			display: flex;
+			align-items: center;
+			margin-top: 4px;
+			gap: 26px;
+			li {
+				margin: 0 !important;
+			}
+			a {
+				display: flex;
+				width: 32px;
+				height: 32px;
+				margin: 0 !important;
+				i {
+					margin: auto !important;
+					&:before {
+						font-size: 25px;
+					}
+				}
+			}
+		}
 	}
 
 	&-footer {

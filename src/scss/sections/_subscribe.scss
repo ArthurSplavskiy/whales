@@ -1,0 +1,21 @@
+.s-subscribe {
+	padding-bottom: 80px;
+	@media (max-width: $tablet) {
+		padding-bottom: 56px;
+	}
+	&-head {
+		h3 {
+			font-weight: 400;
+			margin-bottom: 24px;
+		}
+		max-width: 424px;
+	}
+	&-content {
+		display: grid;
+		grid-template-columns: 1fr 648px;
+		gap: 42px;
+		@media (max-width: $tablet) {
+			grid-template-columns: 1fr;
+		}
+	}
+}

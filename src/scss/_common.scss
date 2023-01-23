@@ -221,10 +221,50 @@ select:-webkit-autofill:focus {
 	}
 }
 
-.s-offset {
-	margin-top: 160px;
-	@media (max-width: $tablet) {
-		margin-top: 80px;
+[data-cursor-hide] {
+	cursor: pointer;
+}
+
+.click-cursor {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 24px;
+	height: 24px;
+	line-height: 60px;
+	text-align: center;
+	border-radius: 100%;
+	user-select: none;
+	pointer-events: none !important;
+	font-weight: 500;
+	background-color: #ff1654;
+	z-index: 10000;
+	transform-origin: center center;
+	opacity: 0;
+	transform: scale(0);
+	&.hide {
+		display: none;
+	}
+	&._animated {
+		animation: showCursor 1s ease-out forwards;
+		animation-delay: 0.5s;
+	}
+}
+
+@keyframes showCursor {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@media (any-hover: none) {
+	.click-cursor {
+		display: none;
 	}
 }
 

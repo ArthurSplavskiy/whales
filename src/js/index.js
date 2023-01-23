@@ -12,7 +12,10 @@ import { windowResize } from './core/events/resize.js';
 import { windowMousemove } from './core/events/mouseMove.js';
 import ScrollObserver from './core/utils/observer.js';
 import createHeroVideo from './core/modules/heroVideo.js';
+import createScrollTrigger from './core/modules/createScrollTrigger.js';
 import Preloader from './core/modules/preloader.js';
+import { windowScroll } from './core/events/scroll.js';
+import { mouseMoveHandler, mouseEnterHandler, mouseLeaveHandler } from './core/modules/cursor.js';
 
 const $preloader = document.querySelector('.preloader');
 
@@ -56,7 +59,10 @@ const init = () => {
 	createHeroVideo();
 
 	//new Preloader();
-	functions.addLottieAnimation('[data-lottie="bubble"]', 'others/lottie/bubble.json', true);
+	functions.addLottieAnimation('[data-lottie="bubble-1"]', 'others/lottie/bubble.json', true);
+	functions.addLottieAnimation('[data-lottie="bubble-2"]', 'others/lottie/bubble.json', true);
+	functions.addLottieAnimation('[data-lottie="bubble-3"]', 'others/lottie/bubble.json', true);
+	functions.addLottieAnimation('[data-lottie="bubble-4"]', 'others/lottie/bubble.json', true);
 
 	// new ScrollObserver({
 	// 	element: '.s-about-numbers',
@@ -70,6 +76,10 @@ const init = () => {
 	document.addEventListener('click', documentClick);
 	document.addEventListener('keydown', documentKeyDown);
 	window.addEventListener('resize', windowResize);
+	window.addEventListener('mousemove', mouseMoveHandler);
+	window.addEventListener('mouseenter', mouseEnterHandler);
+	window.addEventListener('mouseleave', mouseLeaveHandler);
+	//window.addEventListener('scroll', windowScroll, false);
 	if ($heroVideoWrapper) {
 		$heroVideoWrapper.addEventListener('mousemove', windowMousemove);
 	}
