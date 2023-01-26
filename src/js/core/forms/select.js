@@ -1,5 +1,5 @@
 //----- Импорт зависимостей ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-import { _slideUp, _slideDown, _slideToggle } from "../utils/functions.js";
+import { _slideUp, _slideDown, _slideToggle } from '../utils/functions.js';
 
 // Подключение файла стилей
 // Базовые стили поключаются в src/scss/forms.scss
@@ -41,28 +41,28 @@ const selectItems = document.querySelectorAll('select');
 export const selectModule = {
 	// CSS классы модуля
 	selectClasses: {
-		classSelect: "select", // Главный блок
-		classSelectBody: "select__body", // Тело селекта
-		classSelectTitle: "select__title", // Заголовок
-		classSelectValue: "select__value", // Значение в заголовке
-		classSelectLabel: "select__label", // Лабел
-		classSelectInput: "select__input", // Поле ввода
-		classSelectText: "select__text", // Оболочка текстовых данных
-		classSelectOptions: "select__options", // Выпадающий список
-		classSelectPlaceholder: "select__placeholder", // Выпадающий список
-		classSelectOptionsScroll: "select__scroll", // Оболочка при скролле
-		classSelectOption: "select__option", // Пункт
-		classSelectContent: "select__content", // Оболочка контента в заголовке
-		classSelectRow: "select__row", // Ряд
-		classSelectData: "select__asset", // Дополнительные данные
-		classSelectDisabled: "_select-disabled", // Запрешен
-		classSelectTag: "_select-tag", // Класс тега
-		classSelectOpen: "_select-open", // Список открыт
-		classSelectActive: "_select-active", // Список выбран
-		classSelectFocus: "_select-focus", // Список в фокусе
-		classSelectMultiple: "_select-multiple", // Мультивыбор
-		classSelectCheckBox: "_select-checkbox", // Стиль чекбокса
-		classSelectOptionSelected: "_select-selected", // Выбранный пункт
+		classSelect: 'select', // Главный блок
+		classSelectBody: 'select__body', // Тело селекта
+		classSelectTitle: 'select__title', // Заголовок
+		classSelectValue: 'select__value', // Значение в заголовке
+		classSelectLabel: 'select__label', // Лабел
+		classSelectInput: 'select__input', // Поле ввода
+		classSelectText: 'select__text', // Оболочка текстовых данных
+		classSelectOptions: 'select__options', // Выпадающий список
+		classSelectPlaceholder: 'select__placeholder', // Выпадающий список
+		classSelectOptionsScroll: 'select__scroll', // Оболочка при скролле
+		classSelectOption: 'select__option', // Пункт
+		classSelectContent: 'select__content', // Оболочка контента в заголовке
+		classSelectRow: 'select__row', // Ряд
+		classSelectData: 'select__asset', // Дополнительные данные
+		classSelectDisabled: '_select-disabled', // Запрешен
+		classSelectTag: '_select-tag', // Класс тега
+		classSelectOpen: '_select-open', // Список открыт
+		classSelectActive: '_select-active', // Список выбран
+		classSelectFocus: '_select-focus', // Список в фокусе
+		classSelectMultiple: '_select-multiple', // Мультивыбор
+		classSelectCheckBox: '_select-checkbox', // Стиль чекбокса
+		classSelectOptionSelected: '_select-selected' // Выбранный пункт
 	},
 	// Конструктор CSS класса
 	getSelectClass(className) {
@@ -72,8 +72,8 @@ export const selectModule = {
 	getSelectElement(selectItem, className) {
 		return {
 			originalSelect: selectItem.querySelector('select'),
-			selectElement: selectItem.querySelector(selectModule.getSelectClass(className)),
-		}
+			selectElement: selectItem.querySelector(selectModule.getSelectClass(className))
+		};
 	},
 	// Функция инициализации всех селектов
 	selectsInit(selectItems) {
@@ -94,7 +94,7 @@ export const selectModule = {
 	// Функция инициализации конкретного селекта
 	selectInit(originalSelect) {
 		// Создаем оболочку
-		let selectItem = document.createElement("div");
+		let selectItem = document.createElement('div');
 		selectItem.classList.add(selectModule.selectClasses.classSelect);
 		// Выводим оболочку перед оригинальным селектом
 		originalSelect.parentNode.insertBefore(selectItem, originalSelect);
@@ -104,7 +104,10 @@ export const selectModule = {
 		originalSelect.hidden = true;
 
 		// Конструктор косновных элементов
-		selectItem.insertAdjacentHTML('beforeend', `<div class="${selectModule.selectClasses.classSelectBody}"><div hidden class="${selectModule.selectClasses.classSelectOptions}"></div></div>`);
+		selectItem.insertAdjacentHTML(
+			'beforeend',
+			`<div class="${selectModule.selectClasses.classSelectBody}"><div hidden class="${selectModule.selectClasses.classSelectOptions}"></div></div>`
+		);
 		// Запускаем конструктор псевдоселекта
 		selectModule.selectBuild(originalSelect);
 
@@ -114,12 +117,24 @@ export const selectModule = {
 			originalSelect.dataset.placeholder = selectModule.getSelectPlaceholder(originalSelect).value;
 			// Если включен режим label
 			if (selectModule.getSelectPlaceholder(originalSelect).label.show) {
-				const selectItemTitle = selectModule.getSelectElement(selectItem, selectModule.selectClasses.classSelectTitle).selectElement;
-				selectItemTitle.insertAdjacentHTML('afterbegin', `<span class="${selectModule.selectClasses.classSelectLabel}">${selectModule.getSelectPlaceholder(originalSelect).label.text ? selectModule.getSelectPlaceholder(originalSelect).label.text : selectModule.getSelectPlaceholder(originalSelect).value}</span>`);
+				const selectItemTitle = selectModule.getSelectElement(
+					selectItem,
+					selectModule.selectClasses.classSelectTitle
+				).selectElement;
+				selectItemTitle.insertAdjacentHTML(
+					'afterbegin',
+					`<span class="${selectModule.selectClasses.classSelectLabel}">${
+						selectModule.getSelectPlaceholder(originalSelect).label.text
+							? selectModule.getSelectPlaceholder(originalSelect).label.text
+							: selectModule.getSelectPlaceholder(originalSelect).value
+					}</span>`
+				);
 			}
 		}
 		// Запоминаем скорость
-		originalSelect.dataset.speed = originalSelect.dataset.speed ? originalSelect.dataset.speed : "150";
+		originalSelect.dataset.speed = originalSelect.dataset.speed
+			? originalSelect.dataset.speed
+			: '150';
 		// Событие при изменении оригинального select
 		originalSelect.addEventListener('change', selectModule.selectChange);
 	},
@@ -129,11 +144,17 @@ export const selectModule = {
 		// Добавляем ID селекта
 		selectItem.dataset.id = originalSelect.dataset.id;
 		// Получаем класс оригинального селекта, создаем модификатор и добавляем его
-		selectItem.classList.add(originalSelect.getAttribute('class') ? `select_${originalSelect.getAttribute('class')}` : "");
+		selectItem.classList.add(
+			originalSelect.getAttribute('class') ? `select_${originalSelect.getAttribute('class')}` : ''
+		);
 		// Если множественный выбор, добавляем класс
-		originalSelect.multiple ? selectItem.classList.add(selectModule.selectClasses.classSelectMultiple) : selectItem.classList.remove(selectModule.selectClasses.classSelectMultiple);
+		originalSelect.multiple
+			? selectItem.classList.add(selectModule.selectClasses.classSelectMultiple)
+			: selectItem.classList.remove(selectModule.selectClasses.classSelectMultiple);
 		// Cтилизация элементов под checkbox (только для multiple)
-		originalSelect.hasAttribute('data-checkbox') && originalSelect.multiple ? selectItem.classList.add(selectModule.selectClasses.classSelectCheckBox) : selectItem.classList.remove(selectModule.selectClasses.classSelectCheckBox);
+		originalSelect.hasAttribute('data-checkbox') && originalSelect.multiple
+			? selectItem.classList.add(selectModule.selectClasses.classSelectCheckBox)
+			: selectItem.classList.remove(selectModule.selectClasses.classSelectCheckBox);
 		// Сеттер значения заголовка селекта
 		selectModule.setSelectTitleValue(selectItem, originalSelect);
 		// Сеттер элементов списка (options)
@@ -149,28 +170,61 @@ export const selectModule = {
 	selectsActions(e) {
 		const targetElement = e.target;
 		const targetType = e.type;
-		if (targetElement.closest(selectModule.getSelectClass(selectModule.selectClasses.classSelect)) || targetElement.closest(selectModule.getSelectClass(selectModule.selectClasses.classSelectTag))) {
-			const selectItem = targetElement.closest('.select') ? targetElement.closest('.select') : document.querySelector(`.${selectModule.selectClasses.classSelect}[data-id="${targetElement.closest(selectModule.getSelectClass(selectModule.selectClasses.classSelectTag)).dataset.selectId}"]`);
+		if (
+			targetElement.closest(selectModule.getSelectClass(selectModule.selectClasses.classSelect)) ||
+			targetElement.closest(selectModule.getSelectClass(selectModule.selectClasses.classSelectTag))
+		) {
+			const selectItem = targetElement.closest('.select')
+				? targetElement.closest('.select')
+				: document.querySelector(
+						`.${selectModule.selectClasses.classSelect}[data-id="${
+							targetElement.closest(
+								selectModule.getSelectClass(selectModule.selectClasses.classSelectTag)
+							).dataset.selectId
+						}"]`
+				  );
 			const originalSelect = selectModule.getSelectElement(selectItem).originalSelect;
 			if (targetType === 'click') {
 				if (!originalSelect.disabled) {
-					if (targetElement.closest(selectModule.getSelectClass(selectModule.selectClasses.classSelectTag))) {
+					if (
+						targetElement.closest(
+							selectModule.getSelectClass(selectModule.selectClasses.classSelectTag)
+						)
+					) {
 						// Обработка клика на тег
-						const targetTag = targetElement.closest(selectModule.getSelectClass(selectModule.selectClasses.classSelectTag));
-						const optionItem = document.querySelector(`.${selectModule.selectClasses.classSelect}[data-id="${targetTag.dataset.selectId}"] .select__option[data-value="${targetTag.dataset.value}"]`);
+						const targetTag = targetElement.closest(
+							selectModule.getSelectClass(selectModule.selectClasses.classSelectTag)
+						);
+						const optionItem = document.querySelector(
+							`.${selectModule.selectClasses.classSelect}[data-id="${targetTag.dataset.selectId}"] .select__option[data-value="${targetTag.dataset.value}"]`
+						);
 						selectModule.optionAction(selectItem, originalSelect, optionItem);
-					} else if (targetElement.closest(selectModule.getSelectClass(selectModule.selectClasses.classSelectTitle))) {
+					} else if (
+						targetElement.closest(
+							selectModule.getSelectClass(selectModule.selectClasses.classSelectTitle)
+						)
+					) {
 						// Обработка клика на заголовок селекта
 						selectModule.selectAction(selectItem);
-					} else if (targetElement.closest(selectModule.getSelectClass(selectModule.selectClasses.classSelectOption))) {
+					} else if (
+						targetElement.closest(
+							selectModule.getSelectClass(selectModule.selectClasses.classSelectOption)
+						)
+					) {
 						// Обработка клика на элемент селекта
-						const optionItem = targetElement.closest(selectModule.getSelectClass(selectModule.selectClasses.classSelectOption));
+						const optionItem = targetElement.closest(
+							selectModule.getSelectClass(selectModule.selectClasses.classSelectOption)
+						);
 						selectModule.optionAction(selectItem, originalSelect, optionItem);
 					}
 				}
 			} else if (targetType === 'focusin' || targetType === 'focusout') {
-				if (targetElement.closest(selectModule.getSelectClass(selectModule.selectClasses.classSelect))) {
-					targetType === 'focusin' ? selectItem.classList.add(selectModule.selectClasses.classSelectFocus) : selectItem.classList.remove(selectModule.selectClasses.classSelectFocus);
+				if (
+					targetElement.closest(selectModule.getSelectClass(selectModule.selectClasses.classSelect))
+				) {
+					targetType === 'focusin'
+						? selectItem.classList.add(selectModule.selectClasses.classSelectFocus)
+						: selectItem.classList.remove(selectModule.selectClasses.classSelectFocus);
 				}
 			} else if (targetType === 'keydown' && e.code === 'Escape') {
 				selectModule.selectsСlose();
@@ -181,9 +235,13 @@ export const selectModule = {
 	},
 	// Функция закрытия всех селектов
 	selectsСlose() {
-		const selectActiveItems = document.querySelectorAll(`${selectModule.getSelectClass(selectModule.selectClasses.classSelect)}${selectModule.getSelectClass(selectModule.selectClasses.classSelectOpen)}`);
+		const selectActiveItems = document.querySelectorAll(
+			`${selectModule.getSelectClass(
+				selectModule.selectClasses.classSelect
+			)}${selectModule.getSelectClass(selectModule.selectClasses.classSelectOpen)}`
+		);
 		if (selectActiveItems.length) {
-			selectActiveItems.forEach(selectActiveItem => {
+			selectActiveItems.forEach((selectActiveItem) => {
 				selectModule.selectAction(selectActiveItem);
 			});
 		}
@@ -191,7 +249,10 @@ export const selectModule = {
 	// Функция открытия/закрытия конкретного селекта
 	selectAction(selectItem) {
 		const originalSelect = selectModule.getSelectElement(selectItem).originalSelect;
-		const selectOptions = selectModule.getSelectElement(selectItem, selectModule.selectClasses.classSelectOptions).selectElement;
+		const selectOptions = selectModule.getSelectElement(
+			selectItem,
+			selectModule.selectClasses.classSelectOptions
+		).selectElement;
 		if (!selectOptions.classList.contains('_slide')) {
 			selectItem.classList.toggle(selectModule.selectClasses.classSelectOpen);
 			_slideToggle(selectOptions, originalSelect.dataset.speed);
@@ -199,10 +260,19 @@ export const selectModule = {
 	},
 	// Сеттер значения заголовка селекта
 	setSelectTitleValue(selectItem, originalSelect) {
-		const selectItemBody = selectModule.getSelectElement(selectItem, selectModule.selectClasses.classSelectBody).selectElement;
-		const selectItemTitle = selectModule.getSelectElement(selectItem, selectModule.selectClasses.classSelectTitle).selectElement;
+		const selectItemBody = selectModule.getSelectElement(
+			selectItem,
+			selectModule.selectClasses.classSelectBody
+		).selectElement;
+		const selectItemTitle = selectModule.getSelectElement(
+			selectItem,
+			selectModule.selectClasses.classSelectTitle
+		).selectElement;
 		if (selectItemTitle) selectItemTitle.remove();
-		selectItemBody.insertAdjacentHTML("afterbegin", selectModule.getSelectTitleValue(selectItem, originalSelect));
+		selectItemBody.insertAdjacentHTML(
+			'afterbegin',
+			selectModule.getSelectTitleValue(selectItem, originalSelect)
+		);
 	},
 	// Конструктор значения заголовка
 	getSelectTitleValue(selectItem, originalSelect) {
@@ -211,7 +281,15 @@ export const selectModule = {
 		// Обработка значений мультивыбора
 		// Если включен режим тегов (указана настройка data-tags)
 		if (originalSelect.multiple && originalSelect.hasAttribute('data-tags')) {
-			selectTitleValue = selectModule.getSelectedOptionsData(originalSelect).elements.map(option => `<span role="button" data-select-id="${selectItem.dataset.id}" data-value="${option.value}" class="_select-tag">${selectModule.getSelectElementContent(option)}</span>`).join('');
+			selectTitleValue = selectModule
+				.getSelectedOptionsData(originalSelect)
+				.elements.map(
+					(option) =>
+						`<span role="button" data-select-id="${selectItem.dataset.id}" data-value="${
+							option.value
+						}" class="_select-tag">${selectModule.getSelectElementContent(option)}</span>`
+				)
+				.join('');
 			// Если вывод тегов во внешний блок
 			if (originalSelect.dataset.tags && document.querySelector(originalSelect.dataset.tags)) {
 				document.querySelector(originalSelect.dataset.tags).innerHTML = selectTitleValue;
@@ -219,9 +297,13 @@ export const selectModule = {
 			}
 		}
 		// Значение(я) или плейсхолдер
-		selectTitleValue = selectTitleValue.length ? selectTitleValue : originalSelect.dataset.placeholder;
+		selectTitleValue = selectTitleValue.length
+			? selectTitleValue
+			: originalSelect.dataset.placeholder;
 		// Если есть значение, добавляем класс
-		selectModule.getSelectedOptionsData(originalSelect).values.length ? selectItem.classList.add(selectModule.selectClasses.classSelectActive) : selectItem.classList.remove(selectModule.selectClasses.classSelectActive);
+		selectModule.getSelectedOptionsData(originalSelect).values.length
+			? selectItem.classList.add(selectModule.selectClasses.classSelectActive)
+			: selectItem.classList.remove(selectModule.selectClasses.classSelectActive);
 		// Возвращаем поле ввода для поиска или текст
 		if (originalSelect.hasAttribute('data-search')) {
 			// Выводим поле ввода для поиска
@@ -229,7 +311,11 @@ export const selectModule = {
 			return `<div class="${selectModule.selectClasses.classSelectTitle}"><span class="${selectModule.selectClasses.classSelectValue}"><input autocomplete="off" type="text" placeholder="${selectTitleValue}" data-placeholder="${selectTitleValue}" class="${selectModule.selectClasses.classSelectInput}"></span></div>`;
 		} else {
 			// Если выбран элемент со своим классом
-			const customClass = selectModule.getSelectedOptionsData(originalSelect).elements.length && selectModule.getSelectedOptionsData(originalSelect).elements[0].dataset.class ? ` ${selectModule.getSelectedOptionsData(originalSelect).elements[0].dataset.class}` : '';
+			const customClass =
+				selectModule.getSelectedOptionsData(originalSelect).elements.length &&
+				selectModule.getSelectedOptionsData(originalSelect).elements[0].dataset.class
+					? ` ${selectModule.getSelectedOptionsData(originalSelect).elements[0].dataset.class}`
+					: '';
 			// Выводим текстовое значение
 			return `<button type="button" class="${selectModule.selectClasses.classSelectTitle}"><span class="${selectModule.selectClasses.classSelectValue}"><span class="${selectModule.selectClasses.classSelectContent}${customClass}">${selectTitleValue}</span></span></button>`;
 		}
@@ -238,13 +324,22 @@ export const selectModule = {
 	getSelectElementContent(selectOption) {
 		// Если для элемента указан вывод картинки или текста, перестраиваем конструкцию
 		const selectOptionData = selectOption.dataset.asset ? `${selectOption.dataset.asset}` : '';
-		const selectOptionDataHTML = selectOptionData.indexOf('img') >= 0 ? `<img src="${selectOptionData}" alt="">` : selectOptionData;
+		const selectOptionDataHTML =
+			selectOptionData.indexOf('img') >= 0
+				? `<img src="${selectOptionData}" alt="">`
+				: selectOptionData;
 		let selectOptionContentHTML = ``;
-		selectOptionContentHTML += selectOptionData ? `<span class="${selectModule.selectClasses.classSelectRow}">` : '';
-		selectOptionContentHTML += selectOptionData ? `<span class="${selectModule.selectClasses.classSelectData}">` : '';
+		selectOptionContentHTML += selectOptionData
+			? `<span class="${selectModule.selectClasses.classSelectRow}">`
+			: '';
+		selectOptionContentHTML += selectOptionData
+			? `<span class="${selectModule.selectClasses.classSelectData}">`
+			: '';
 		selectOptionContentHTML += selectOptionData ? selectOptionDataHTML : '';
 		selectOptionContentHTML += selectOptionData ? `</span>` : '';
-		selectOptionContentHTML += selectOptionData ? `<span class="${selectModule.selectClasses.classSelectText}">` : '';
+		selectOptionContentHTML += selectOptionData
+			? `<span class="${selectModule.selectClasses.classSelectText}">`
+			: '';
 		selectOptionContentHTML += selectOption.textContent;
 		selectOptionContentHTML += selectOptionData ? `</span>` : '';
 		selectOptionContentHTML += selectOptionData ? `</span>` : '';
@@ -252,16 +347,16 @@ export const selectModule = {
 	},
 	// Получение данных плейсхолдера
 	getSelectPlaceholder(originalSelect) {
-		const selectPlaceholder = Array.from(originalSelect.options).find(option => !option.value);
+		const selectPlaceholder = Array.from(originalSelect.options).find((option) => !option.value);
 		if (selectPlaceholder) {
 			return {
 				value: selectPlaceholder.textContent,
-				show: selectPlaceholder.hasAttribute("data-show"),
+				show: selectPlaceholder.hasAttribute('data-show'),
 				label: {
-					show: selectPlaceholder.hasAttribute("data-label"),
+					show: selectPlaceholder.hasAttribute('data-label'),
 					text: selectPlaceholder.dataset.label
 				}
-			}
+			};
 		}
 	},
 	// Получение данных из выбранных элементов
@@ -271,33 +366,43 @@ export const selectModule = {
 		if (originalSelect.multiple) {
 			// Если мультивыбор
 			// Убираем плейсхолдер, получаем остальные выбранные элементы
-			selectedOptions = Array.from(originalSelect.options).filter(option => option.value).filter(option => option.selected);
+			selectedOptions = Array.from(originalSelect.options)
+				.filter((option) => option.value)
+				.filter((option) => option.selected);
 		} else {
 			// Если единичный выбор
 			selectedOptions.push(originalSelect.options[originalSelect.selectedIndex]);
 		}
 		return {
-			elements: selectedOptions.map(option => option),
-			values: selectedOptions.filter(option => option.value).map(option => option.value),
-			html: selectedOptions.map(option => selectModule.getSelectElementContent(option))
-		}
+			elements: selectedOptions.map((option) => option),
+			values: selectedOptions.filter((option) => option.value).map((option) => option.value),
+			html: selectedOptions.map((option) => selectModule.getSelectElementContent(option))
+		};
 	},
 	// Конструктор элементов списка
 	getOptions(originalSelect) {
 		// Настрока скролла элементов
 		let selectOptionsScroll = originalSelect.hasAttribute('data-scroll') ? `data-simplebar` : '';
-		let selectOptionsScrollHeight = originalSelect.dataset.scroll ? `style="max-height:${originalSelect.dataset.scroll}px"` : '';
+		let selectOptionsScrollHeight = originalSelect.dataset.scroll
+			? `style="max-height:${originalSelect.dataset.scroll}px"`
+			: '';
 		// Получаем элементы списка
 		let selectOptions = Array.from(originalSelect.options);
 		if (selectOptions.length > 0) {
 			let selectOptionsHTML = ``;
 			// Если указана настройка data-show, показываем плейсхолдер в списке
-			if ((selectModule.getSelectPlaceholder(originalSelect) && !selectModule.getSelectPlaceholder(originalSelect).show) || originalSelect.multiple) {
-				selectOptions = selectOptions.filter(option => option.value);
+			if (
+				(selectModule.getSelectPlaceholder(originalSelect) &&
+					!selectModule.getSelectPlaceholder(originalSelect).show) ||
+				originalSelect.multiple
+			) {
+				selectOptions = selectOptions.filter((option) => option.value);
 			}
 			// Строим и выводим основную конструкцию
-			selectOptionsHTML += selectOptionsScroll ? `<div ${selectOptionsScroll} ${selectOptionsScrollHeight} class="${selectModule.selectClasses.classSelectOptionsScroll}">` : '';
-			selectOptions.forEach(selectOption => {
+			selectOptionsHTML += selectOptionsScroll
+				? `<div ${selectOptionsScroll} ${selectOptionsScrollHeight} class="${selectModule.selectClasses.classSelectOptionsScroll}">`
+				: '';
+			selectOptions.forEach((selectOption) => {
 				// Получаем конструкцию конкретного элемента списка
 				selectOptionsHTML += selectModule.getOption(selectOption, originalSelect);
 			});
@@ -308,9 +413,13 @@ export const selectModule = {
 	// Конструктор конкретного элемента списка
 	getOption(selectOption, originalSelect) {
 		// Если элемент выбран и включен режим мультивыбора, добавляем класс
-		const selectOptionSelected = selectOption.selected && originalSelect.multiple ? ` ${selectModule.selectClasses.classSelectOptionSelected}` : '';
+		const selectOptionSelected =
+			selectOption.selected && originalSelect.multiple
+				? ` ${selectModule.selectClasses.classSelectOptionSelected}`
+				: '';
 		// Если элемент выбрани нет настройки data-show-selected, скрываем элемент
-		const selectOptionHide = selectOption.selected && !originalSelect.hasAttribute('data-show-selected') ? `hidden` : ``;
+		const selectOptionHide =
+			selectOption.selected && !originalSelect.hasAttribute('data-show-selected') ? `hidden` : ``;
 		// Если для элемента указан класс добавляем
 		const selectOptionClass = selectOption.dataset.class ? ` ${selectOption.dataset.class}` : '';
 		// Строим и возвращаем конструкцию элемента
@@ -323,36 +432,54 @@ export const selectModule = {
 	// Сеттер элементов списка (options)
 	setOptions(selectItem, originalSelect) {
 		// Получаем объект тела псевдоселекта
-		const selectItemOptions = selectModule.getSelectElement(selectItem, selectModule.selectClasses.classSelectOptions).selectElement;
+		const selectItemOptions = selectModule.getSelectElement(
+			selectItem,
+			selectModule.selectClasses.classSelectOptions
+		).selectElement;
 		// Запускаем конструктор элементов списка (options) и добавляем в тело псевдоселекта
 		selectItemOptions.innerHTML = selectModule.getOptions(originalSelect);
 	},
 	// Обработчик клика на элемент списка
 	optionAction(selectItem, originalSelect, optionItem) {
-		if (originalSelect.multiple) { // Если мультивыбор
+		if (originalSelect.multiple) {
+			// Если мультивыбор
 			// Выделяем классом элемент
 			optionItem.classList.toggle(selectModule.selectClasses.classSelectOptionSelected);
-			// Очищаем выбранные элементы 
-			const originalSelectSelectedItems = selectModule.getSelectedOptionsData(originalSelect).elements;
-			originalSelectSelectedItems.forEach(originalSelectSelectedItem => {
+			// Очищаем выбранные элементы
+			const originalSelectSelectedItems =
+				selectModule.getSelectedOptionsData(originalSelect).elements;
+			originalSelectSelectedItems.forEach((originalSelectSelectedItem) => {
 				originalSelectSelectedItem.removeAttribute('selected');
 			});
-			// Выбираем элементы 
-			const selectSelectedItems = selectItem.querySelectorAll(selectModule.getSelectClass(selectModule.selectClasses.classSelectOptionSelected));
-			selectSelectedItems.forEach(selectSelectedItems => {
-				originalSelect.querySelector(`option[value="${selectSelectedItems.dataset.value}"]`).setAttribute('selected', 'selected');
+			// Выбираем элементы
+			const selectSelectedItems = selectItem.querySelectorAll(
+				selectModule.getSelectClass(selectModule.selectClasses.classSelectOptionSelected)
+			);
+			selectSelectedItems.forEach((selectSelectedItems) => {
+				originalSelect
+					.querySelector(`option[value="${selectSelectedItems.dataset.value}"]`)
+					.setAttribute('selected', 'selected');
 			});
-		} else { // Если единичный выбор
+		} else {
+			// Если единичный выбор
 			// Если не указана настройка data-show-selected, скрываем выбранный элемент
 			if (!originalSelect.hasAttribute('data-show-selected')) {
 				// Сначала все показать
-				if (selectItem.querySelector(`${selectModule.getSelectClass(selectModule.selectClasses.classSelectOption)}[hidden]`)) {
-					selectItem.querySelector(`${selectModule.getSelectClass(selectModule.selectClasses.classSelectOption)}[hidden]`).hidden = false;
+				if (
+					selectItem.querySelector(
+						`${selectModule.getSelectClass(selectModule.selectClasses.classSelectOption)}[hidden]`
+					)
+				) {
+					selectItem.querySelector(
+						`${selectModule.getSelectClass(selectModule.selectClasses.classSelectOption)}[hidden]`
+					).hidden = false;
 				}
 				// Скрываем выбранную
 				optionItem.hidden = true;
 			}
-			originalSelect.value = optionItem.hasAttribute('data-value') ? optionItem.dataset.value : optionItem.textContent;
+			originalSelect.value = optionItem.hasAttribute('data-value')
+				? optionItem.dataset.value
+				: optionItem.textContent;
 			selectModule.selectAction(selectItem);
 		}
 		// Обновляем заголовок селекта
@@ -375,21 +502,37 @@ export const selectModule = {
 	selectDisabled(selectItem, originalSelect) {
 		if (originalSelect.disabled) {
 			selectItem.classList.add(selectModule.selectClasses.classSelectDisabled);
-			selectModule.getSelectElement(selectItem, selectModule.selectClasses.classSelectTitle).selectElement.disabled = true;
+			selectModule.getSelectElement(
+				selectItem,
+				selectModule.selectClasses.classSelectTitle
+			).selectElement.disabled = true;
 		} else {
 			selectItem.classList.remove(selectModule.selectClasses.classSelectDisabled);
-			selectModule.getSelectElement(selectItem, selectModule.selectClasses.classSelectTitle).selectElement.disabled = false;
+			selectModule.getSelectElement(
+				selectItem,
+				selectModule.selectClasses.classSelectTitle
+			).selectElement.disabled = false;
 		}
 	},
 	// Обработчик поиска по элементам списка
 	searchActions(selectItem) {
 		const originalSelect = selectModule.getSelectElement(selectItem).originalSelect;
-		const selectInput = selectModule.getSelectElement(selectItem, selectModule.selectClasses.classSelectInput).selectElement;
-		const selectOptions = selectModule.getSelectElement(selectItem, selectModule.selectClasses.classSelectOptions).selectElement;
-		const selectOptionsItems = selectOptions.querySelectorAll(`.${selectModule.selectClasses.classSelectOption}`);
-		selectInput.addEventListener("input", function (e) {
-			selectOptionsItems.forEach(selectOptionsItem => {
-				if (selectOptionsItem.textContent.toUpperCase().indexOf(selectInput.value.toUpperCase()) >= 0) {
+		const selectInput = selectModule.getSelectElement(
+			selectItem,
+			selectModule.selectClasses.classSelectInput
+		).selectElement;
+		const selectOptions = selectModule.getSelectElement(
+			selectItem,
+			selectModule.selectClasses.classSelectOptions
+		).selectElement;
+		const selectOptionsItems = selectOptions.querySelectorAll(
+			`.${selectModule.selectClasses.classSelectOption}`
+		);
+		selectInput.addEventListener('input', function (e) {
+			selectOptionsItems.forEach((selectOptionsItem) => {
+				if (
+					selectOptionsItem.textContent.toUpperCase().indexOf(selectInput.value.toUpperCase()) >= 0
+				) {
 					selectOptionsItem.hidden = false;
 				} else {
 					selectOptionsItem.hidden = true;
@@ -400,11 +543,13 @@ export const selectModule = {
 		});
 	},
 	// Коллбэк функция
-	selectCallback(selectItem, originalSelect) { },
+	selectCallback(selectItem, originalSelect) {},
 	// Логгинг в консоль
 	setLogging(message) {
 		console.log(`[select - info] ${message} `);
 	}
-}
+};
 // Запуск инициализации
-selectItems.length ? selectModule.selectsInit(selectItems) : selectModule.setLogging('Нет ни одного select, модуль можно отключить');
+selectItems.length
+	? selectModule.selectsInit(selectItems)
+	: selectModule.setLogging('Нет ни одного select, модуль можно отключить');

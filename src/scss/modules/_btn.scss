@@ -96,4 +96,111 @@ button {
 			}
 		}
 	}
+
+	&-outline {
+		padding: 13px 32px 13px 32px;
+		background: none;
+		color: $white;
+		border: 1px solid $primary-magneta;
+		&.active {
+			background: $primary-magneta;
+		}
+	}
+}
+
+.select {
+	position: relative;
+	font-size: 14px;
+	line-height: 1000%;
+	select {
+		display: none;
+	}
+	button:active {
+		transform: scale(1) !important;
+	}
+	&._select-open {
+		.select__title {
+			border-top-left-radius: 20px;
+			border-top-right-radius: 20px;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			border-bottom: none;
+			&:after {
+				transform: rotate(-270deg);
+			}
+		}
+	}
+	// .select__item
+	&__item {
+		position: relative;
+	}
+	// .select__title
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 40px;
+		color: $white;
+		border: 1px solid $primary-magneta;
+		background-color: transparent;
+		cursor: pointer;
+		padding: 0 30px 0 24px;
+		border-radius: 80px;
+		&:after {
+			font-family: 'icomoon' !important;
+			content: '\e900';
+			transform: rotate(-90deg);
+			transition: transform 0.3s ease 0s;
+		}
+	}
+	// .select__value
+	&__value {
+		font-family: 'Anton', 'NeueHaasDisplay', sans-serif;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		span {
+			height: auto;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+		}
+	}
+	&__input {
+		width: 100%;
+		background-color: transparent;
+		height: 100%;
+	}
+	// .select__options
+	&__options {
+		color: $white;
+		display: none;
+		position: absolute;
+		top: 40px;
+
+		min-width: 100%;
+		left: 0;
+		background-color: $primary-black;
+		border: 1px solid $primary-magneta;
+		border-top: none;
+		padding: 5px 0px 5px 24px;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		z-index: 2;
+	}
+	// .select__option
+	&__option {
+		display: block;
+		font-family: 'Anton', 'NeueHaasDisplay', sans-serif;
+		cursor: pointer;
+		padding: 5px 0;
+		margin: 0px 0px 10px 0px;
+		background: none;
+		color: $white;
+		color: $primary-ohra;
+	}
 }

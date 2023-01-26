@@ -8,20 +8,12 @@
 @import 'meet';
 @import 'contacts';
 @import 'subscribe';
-
-@import 'traiding';
-@import 'lines';
-@import 'news';
-@import 'hover-tabs';
-@import 'service';
-@import 'benefits';
-@import 'place';
-@import 'articles';
-@import 'manure';
-@import 'sertificates';
-@import 'blog';
+@import 'history';
+@import 'full-image';
+@import 'location';
+@import 'model';
+@import 'project';
 @import 'article';
-@import 'gallery';
 
 .s-offset {
 	margin-top: 160px;
@@ -46,6 +38,13 @@
 		margin-bottom: 40px;
 	}
 	@media (max-width: $tablet) {
+		margin-bottom: 40px;
+	}
+}
+
+.s-title {
+	margin-bottom: 56px;
+	@media (min-width: $mobile) {
 		margin-bottom: 40px;
 	}
 }

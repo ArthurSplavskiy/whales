@@ -67,6 +67,7 @@ h2 {
 }
 
 h3 {
+	font-weight: 400;
 	font-size: 48px;
 	line-height: 100%;
 	text-transform: uppercase;
@@ -113,6 +114,15 @@ h5 {
 	}
 }
 
+.text-18 {
+	font-family: $ff-2, sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	@media (max-width: $mobile) {
+		font-size: 14px;
+	}
+}
+
 .text-24 {
 	font-family: $ff-2, sans-serif;
 	font-weight: 400;
@@ -125,5 +135,22 @@ h5 {
 	@media (max-width: $mobile) {
 		font-size: 14px;
 		line-height: 24px;
+	}
+}
+
+.text-18-24 {
+	font-family: $ff-2, sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	@media (max-width: $mobile) {
+		font-size: 24px;
+		line-height: 26px;
+	}
+}
+
+.s-title-offset {
+	margin-bottom: 56px;
+	@media (max-width: $mobile) {
+		margin-bottom: 40px;
 	}
 }

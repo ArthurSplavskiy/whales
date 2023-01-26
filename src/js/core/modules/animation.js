@@ -1,6 +1,6 @@
 //common uses selectors
-import { debounce } from '../utils/functions.js';
 import { addLottieAnimation } from '../utils/functions.js';
+import Cookies from 'js-cookie';
 
 let el = {
 	header: $('header'),
@@ -283,24 +283,25 @@ $(window).on('load', function () {
 	//after full load
 	//hide preloader after load
 	const preloaderAnimationDuration = 4000;
-	const firstLoad = document.cookie
-		.split(';')
-		.filter((c) => c.includes('firstLoad'))?.[0]
-		?.split('=')?.[1];
-
-	if (!Boolean(firstLoad) && !el.preloader.hasClass(el.preloaderCl)) {
-		setTimeout(() => {
-			funPreloader();
-		}, preloaderAnimationDuration);
-	} else {
-		funPreloader();
-	}
+	const firstLoad = Cookies.get('first-load');
 
 	if (!Boolean(firstLoad)) {
-		addLottieAnimation('[data-lottie="preloader"]', 'others/preloader.json');
+		Cookies.set('first-load', true);
+	} else {
+		Cookies.set('first-load', false);
 	}
 
-	document.cookie = 'firstLoad=false; max-age=60*60*12';
+	if (Boolean(firstLoad)) {
+		//addLottieAnimation('[data-lottie="preloader"]', 'others/preloader.json');
+	}
+	if (!Boolean(firstLoad) && !el.preloader.hasClass(el.preloaderCl)) {
+		funPreloader();
+	} else {
+		funPreloader();
+		// setTimeout(() => {
+		// 	funPreloader();
+		// }, preloaderAnimationDuration);
+	}
 });
 
 el.document.ready(function () {
@@ -312,46 +313,46 @@ el.document.ready(function () {
 	$("a[href^='#']").click(function (e) {
 		e.preventDefault();
 	});
-	$("a[href^='#'], [data-anchor]").click(function (e) {
-		//e.preventDefault();
+	// $("a[href^='#'], [data-anchor]").click(function (e) {
+	// 	//e.preventDefault();
 
-		let _this = $(this),
-			elDta;
+	// 	let _this = $(this),
+	// 		elDta;
 
-		if (_this.is('[data-anchor]')) elDta = $('#' + _this.data('anchor'));
-		else if (_this.is('[href]') && _this.attr('href').length > 1) {
-			let _href = _this.attr('href');
-			elDta = $(_href);
+	// 	if (_this.is('[data-anchor]')) elDta = $('#' + _this.data('anchor'));
+	// 	else if (_this.is('[href]') && _this.attr('href').length > 1) {
+	// 		let _href = _this.attr('href');
+	// 		elDta = $(_href);
 
-			if (_href === '#bCont') {
-				setTimeout(function () {
-					$(_href + ' .form__input')
-						.first()
-						.focus();
-				}, 1000);
-			}
-		} else return;
+	// 		if (_href === '#bCont') {
+	// 			setTimeout(function () {
+	// 				$(_href + ' .form__input')
+	// 					.first()
+	// 					.focus();
+	// 			}, 1000);
+	// 		}
+	// 	} else return;
 
-		if (elDta.length) {
-			let nav = el.header,
-				top,
-				navHeight;
+	// 	if (elDta.length) {
+	// 		let nav = el.header,
+	// 			top,
+	// 			navHeight;
 
-			top = elDta.offset().top;
+	// 		top = elDta.offset().top;
 
-			if (nav.length && nav.css('position') === 'fixed') {
-				// ||
-				'absolute' && el.documentH > el.windowtH;
-				navHeight = el.header.outerHeight();
-				top -= navHeight;
-			}
-			funScroll(top);
+	// 		if (nav.length && nav.css('position') === 'fixed') {
+	// 			// ||
+	// 			'absolute' && el.documentH > el.windowtH;
+	// 			navHeight = el.header.outerHeight();
+	// 			top -= navHeight;
+	// 		}
+	// 		funScroll(top);
 
-			if (el.navToggle.hasClass('active')) {
-				el.navToggle.trigger('click');
-			}
-		}
-	});
+	// 		if (el.navToggle.hasClass('active')) {
+	// 			el.navToggle.trigger('click');
+	// 		}
+	// 	}
+	// });
 
 	el.navToggle.click(function () {
 		el.navToggle.toggleClass('active');

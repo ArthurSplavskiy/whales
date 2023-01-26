@@ -29,27 +29,10 @@
 		@media (max-width: 1200px) {
 			margin-bottom: 24px;
 		}
-		.s-craft-rect-mask {
-			&:nth-child(1) {
-				transform-origin: 0 100px;
-				@media (max-width: $mobile) {
-					y: 50px;
-					height: 165px;
-				}
-			}
-			&:nth-child(2) {
-				transform-origin: 100% 100%;
-				@media (max-width: $mobile) {
-					height: 278px;
-				}
-			}
-			&:nth-child(3) {
-				transform-origin: 0 185px;
-				@media (max-width: $mobile) {
-					y: 95px;
-					height: 165px;
-				}
-			}
+		&._animated {
+			// .s-craft-rect-mask {
+			// 	animation: imageChange 0.8s ease-out forwards 0.5s;
+			// }
 		}
 	}
 	.craft-text {
@@ -68,29 +51,53 @@
 			}
 		}
 	}
-	.craft-image {
-		width: 660px;
-		height: 540px;
-		@media (max-width: 1200px) {
-			width: 100%;
+}
+
+.s-craft-rect-mask {
+	&:nth-child(1) {
+		transform-origin: 0 100px;
+		@media (max-width: $mobile) {
+			y: 50px;
+			height: 165px;
 		}
+	}
+	&:nth-child(2) {
+		transform-origin: 100% 100%;
 		@media (max-width: $mobile) {
 			height: 278px;
 		}
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+	}
+	&:nth-child(3) {
+		transform-origin: 0 185px;
+		@media (max-width: $mobile) {
+			y: 95px;
+			height: 165px;
 		}
 	}
-	&-svg-mask {
-		@extend %hide-el;
+}
+
+.craft-image {
+	width: 660px;
+	height: 540px;
+	@media (max-width: 1200px) {
+		width: 100%;
 	}
-	&-rect-mask {
-		rx: 20px;
-		@media (max-width: $tablet) {
-			rx: 8px;
-		}
+	@media (max-width: $mobile) {
+		height: 278px;
+	}
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+.craft-image-svg-mask {
+	@extend %hide-el;
+}
+.craft-image-rect-mask {
+	rx: 20px;
+	@media (max-width: $tablet) {
+		rx: 8px;
 	}
 }
 

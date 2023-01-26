@@ -1,16 +1,41 @@
 .p-404 {
-	h1 {
-		color: white;
-		font-weight: 700;
-		font-size: 120px;
-		line-height: 120px;
-		margin-bottom: 16px;
+	&-content {
+		padding-top: 80px;
+	}
+	&-head {
+		display: grid;
+		grid-template-columns: 424px 424px;
+		gap: 16px;
+		margin-bottom: 56px;
+		@media (max-width: $tablet) {
+			grid-template-columns: 1fr;
+		}
 		@media (max-width: $mobile) {
-			font-size: 80px;
-			line-height: 80px;
+			margin-bottom: 25px;
+		}
+		h1 {
+			font-weight: 400;
+			font-size: 220px;
+			@media (max-width: $mobile) {
+				font-size: 88px;
+			}
 		}
 	}
-	.s-hero-descr {
-		max-width: 560px;
+	&-back {
+		@media (max-width: $tablet) {
+			max-width: 280px;
+		}
+		.btn {
+			margin-top: 40px;
+		}
+	}
+	&-image-ibg {
+		overflow: hidden;
+		border-radius: 20px;
+		height: 640px;
+		margin-bottom: 80px;
+		@media (max-width: $mobile) {
+			height: 240px;
+		}
 	}
 }

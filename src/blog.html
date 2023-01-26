@@ -3,161 +3,78 @@
 	@@include('html/_head.htm',{})
 
 	<body>
-		<div class="wrapper" style="overflow: hidden">
+		<div class="wrapper">
 			@@include('html/_preloader-markup.htm',{}) @@include('html/_header.htm',{})
+			@@include('html/_cursor.htm',{})
 			<main data-an="_fadeUp20">
-				<section class="s-hero">
-					<div class="s-hero-image">
-						<img src="img/hero-05.png" alt="abc" />
-					</div>
+				<section class="s-hero" data-an="_fadeIn">
 					<div class="container">
 						<div class="s-hero-content">
 							<nav class="breadcrumbs">
 								<ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
 									<li itemscope itemtype="http://schema.org/ListItem">
-										<a class="breadcrumbs__link" itemprop="item" href="index.html">
-											Головна сторінка
-										</a>
+										<a class="breadcrumbs__link" itemprop="item" href="index.html"> Homepage </a>
 										<meta itemprop="position" content="1" />
 									</li>
 									<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-										<span class="breadcrumbs__link" itemprop="name">Новини</span>
+										<span class="breadcrumbs__link" itemprop="name">Blog</span>
 										<meta itemprop="position" content="2" />
 									</li>
 								</ul>
 							</nav>
-							<div class="s-hero-text">
-								<h1 class="s-hero-title" data-an="_fadeUp">Новини</h1>
-								<p class="s-hero-descr" data-an="_fadeUp" data-del="0.2">
-									UP Trading займається трейдингом, а також є посередником між клієнтом, який продає
-									продукт, та клієнтом, який його закуповує. Це може бути як український, так і
-									польський клієнт, тобто виступати посередником при продажі зернових як з України,
-									так і в Україну.
-								</p>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="s-blog">
-					<div class="container">
-						<div class="s-blog-tags">
-							<span>Теги</span>
-							<div class="tags">
-								<a href="#" class="tag">Новини</a>
-								<a href="#" class="tag">Популярні публікації</a>
-								<a href="#" class="tag">Трейдинг</a>
-								<a href="#" class="tag">Добрива та перевезення</a>
-								<a href="#" class="tag">Логістика</a>
-							</div>
-						</div>
-						<div class="s-blog-list">
-							@@include('html/_news-card.htm',{}) @@include('html/_news-card.htm',{})
-							@@include('html/_news-card.htm',{}) @@include('html/_news-card.htm',{})
-							@@include('html/_news-card.htm',{}) @@include('html/_news-card.htm',{})
-							@@include('html/_news-card.htm',{}) @@include('html/_news-card.htm',{})
-						</div>
-						<div class="s-blog-pagination" data-an="_fadeIn">
-							<div class="s-blog-pagination-btn">
-								<a href="#" class="btn-blog">Більше новин</a>
-							</div>
-							@@include('html/_pagging.htm',{})
-						</div>
-					</div>
-				</section>
-				<section class="s-partners s-white s-offset">
-					<div class="container">
-						<div class="s-partners-content s-border">
-							<div class="s-headline">
-								<h2 class="page-title" data-an="_fadeUp">Наші Партнери</h2>
-								<p class="page-text" data-an="_fadeUp">
-									UP Trading - компанія, що надає послуги з залізничної логістики, трейдингу зерна
-									та гуртового продажу добрив в Польщі. Працює у зв’язці з Most Logistic Terminal.
-								</p>
-							</div>
-							<div class="partners-slider" data-swiper="partners-slider" data-an="_fadeIn">
-								<div class="partners-slider__swiper">
-									<a href="#" class="partners-slider-slide">
-										<img src="img/ibm-logo.svg" alt="ibm" />
-									</a>
-									<a href="#" class="partners-slider-slide">
-										<img src="img/treeden.png" alt="treeden" />
-									</a>
-									<a href="#" class="partners-slider-slide">
-										<img src="img/agroloc.png" alt="agroloc" />
-									</a>
-									<a href="#" class="partners-slider-slide">
-										<img src="img/ibm-logo.svg" alt="ibm" />
-									</a>
-									<a href="#" class="partners-slider-slide">
-										<img src="img/treeden.png" alt="treeden" />
-									</a>
-									<a href="#" class="partners-slider-slide">
-										<img src="img/agroloc.png" alt="agroloc" />
-									</a>
-								</div>
-							</div>
-							<div class="sliders-controls-box">
-								<div class="sliders-controls">
-									<button data-swiper-control="partners-slider-prev">
-										<img src="img/interface/slider-arrow.svg" alt="prev" />
-									</button>
-									<button data-swiper-control="partners-slider-next">
-										<img src="img/interface/slider-arrow.svg" alt="next" />
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="s-contacts s-blue s-offset">
-					<div class="container">
-						<div class="s-contacts-content s-border" data-an="_fadeIn">
-							<div class="s-contacts-grid">
-								<div class="s-contacts-media">
-									<h2 class="page-title" data-an="_fadeUp">Залишилися запитання?</h2>
-									<div class="s-contacts-img img-animate" data-an="_fadeIn">
-										<img src="img/contact.png" alt="up" />
+							<div class="s-hero-title" data-an="_fadeUp">
+								<h1>Blog</h1>
+								<div class="s-hero-text">
+									<div class="s-hero-p">
+										<p class="text-18">
+											Scale up your tech company with Whale’s growth toolset. From automation
+											software to a brand stratedy - we got i tcovered
+										</p>
 									</div>
 								</div>
-								<form class="callback-form" data-test data-message="#popup-thank" action="#">
-									<fieldset class="callback-form-item" data-an="_fadeUp" data-del="0.1">
-										<label>Ім’я</label>
-										<input type="text" name="name" data-required />
-									</fieldset>
-									<fieldset class="callback-form-item" data-an="_fadeUp" data-del="0.1">
-										<label>Прізвище</label>
-										<input type="text" name="surname" data-required />
-									</fieldset>
-									<fieldset class="callback-form-item" data-an="_fadeUp" data-del="0.15">
-										<label>E-mail</label>
-										<input type="text" name="email" data-required="email" />
-									</fieldset>
-									<!-- <fieldset class="callback-form-item" data-an="_fadeUp" data-del="0.2">
-										<input
-											type="text"
-											placeholder="НОМЕр телефону*"
-											name="phone"
-											data-required
-											data-phone-mask />
-									</fieldset> -->
-									<fieldset class="callback-form-item" data-an="_fadeUp" data-del="0.25">
-										<label>Введіть ваше повідомлення</label>
-										<textarea name="textarea"></textarea>
-									</fieldset>
-									<button type="submit" class="btn btn-white" data-an="_fadeIn" data-del="0.3">
-										<div class="btn-circle">
-											<img src="img/interface/btn-arrow.svg" alt="link" />
-										</div>
-										<span class="btn-text">Надіслати повідомлення</span>
-									</button>
-								</form>
 							</div>
 						</div>
 					</div>
 				</section>
+
+				<div class="container">
+					<div class="work-content">
+						<div class="work-filter" data-an="_fadeUp">
+							<div class="work-filter-mobile">
+								<select name="form[]" class="form" data-speed="0">
+									<option value="1" selected>All</option>
+									<option value="2">E-commerce</option>
+									<option value="3">Digital marketing</option>
+									<option value="4">Partnership</option>
+									<option value="4">Whalseware lap</option>
+								</select>
+							</div>
+							<div class="work-filter-desktop">
+								<button class="btn btn-outline active">All</button>
+								<button class="btn btn-outline">E-commerce</button>
+								<button class="btn btn-outline">Digital marketing</button>
+								<button class="btn btn-outline">Partnership</button>
+								<button class="btn btn-outline">E-commerce</button>
+							</div>
+						</div>
+						<div class="work-grid">
+							@@include('html/_news-card.htm',{}) @@include('html/_news-card.htm',{})
+							@@include('html/_news-card.htm',{}) @@include('html/_news-card.htm',{})
+							@@include('html/_news-card.htm',{}) @@include('html/_news-card.htm',{})
+							@@include('html/_news-card.htm',{}) @@include('html/_news-card.htm',{})
+							@@include('html/_news-card.htm',{}) @@include('html/_news-card.htm',{})
+							@@include('html/_news-card.htm',{}) @@include('html/_news-card.htm',{})
+						</div>
+						<div class="work-load-more">
+							<a class="btn btn-gradient" href="#">More news</a>
+						</div>
+					</div>
+				</div>
+				@@include('html/_contacts.htm',{})
 			</main>
-			@@include('html/_footer.htm',{}) @@include('html/_popup-thank.htm',{})
-			@@include('html/_js.htm',{})
+			@@include('html/_footer.htm',{}) @@include('html/_popup-video.htm',{})
+			@@include('html/_popup-callback.htm',{}) @@include('html/_popup-thank.htm',{})
+			@@include('html/_popup-cookie.htm',{}) @@include('html/_js.htm',{})
 		</div>
 	</body>
 </html>

@@ -1,0 +1,124 @@
+.s-model {
+	&.craft-image {
+		img {
+			-webkit-clip-path: url(#craft-clip);
+			clip-path: url(#craft-clip);
+		}
+	}
+	&-list {
+		list-style-type: none;
+		counter-reset: item;
+
+		.s-model-text {
+			position: relative;
+
+			&::before {
+				counter-increment: item;
+				content: '[ ' counter(item) ' ]'; // "0" - add something
+			}
+		}
+	}
+	&-gradient {
+		@include gradient-text($primary-gradient);
+		font-size: 88px;
+		line-height: 100%;
+		text-transform: uppercase;
+		margin-bottom: 24px;
+		@media (max-width: $mobile) {
+			font-size: 32px;
+		}
+	}
+	&-text {
+		position: relative;
+		display: inline-grid;
+		grid-template-columns: 32px auto;
+		max-width: 500px;
+		&:before {
+			content: '';
+			font-family: 'NeueHaasDisplay';
+			align-self: flex-start;
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 150%;
+		}
+		p {
+			grid-column: 2 / -1;
+			@media (max-width: 1200px) {
+				grid-column: 1 / -1;
+			}
+		}
+		ul {
+			grid-column: 2 / -1;
+			text-transform: uppercase;
+			margin-top: 16px;
+			font-size: 18px;
+			line-height: 100%;
+			@media (max-width: 1200px) {
+				grid-column: 1 / -1;
+			}
+			i {
+				font-size: 18px;
+				margin-right: 16px;
+			}
+			svg {
+				width: 18px;
+				height: 18px;
+				margin-right: 16px;
+			}
+			li {
+				&:not(:last-child) {
+					margin-bottom: 16px;
+				}
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+	&-item {
+		display: grid;
+		grid-template-columns: 1fr 660px;
+		align-items: flex-start;
+		&:not(:last-child) {
+			margin-bottom: 80px;
+			@media (max-width: $mobile) {
+				margin-bottom: 56px;
+			}
+		}
+		&:before {
+			display: none;
+		}
+		&-reverse {
+			grid-template-columns: 660px 1fr;
+			.s-model-text {
+				@media (min-width: 1200px) {
+					justify-self: flex-end;
+				}
+			}
+		}
+		@media (max-width: 1200px) {
+			grid-template-columns: 1fr;
+			gap: 24px;
+			.craft-image {
+				order: -1;
+			}
+		}
+	}
+	.btn {
+		padding: 0;
+		margin-top: 32px;
+		grid-column: 2 / -1;
+		@media (max-width: 1200px) {
+			grid-column: 1 / -1;
+		}
+	}
+}
+
+@keyframes imageIn {
+	0% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}

@@ -51,6 +51,7 @@
 		"webpack-stream": "7.0.0"
 	},
 	"dependencies": {
-		"gsap": "file:gsap-bonus.tgz"
+		"gsap": "file:gsap-bonus.tgz",
+		"js-cookie": "3.0.1"
 	}
 }

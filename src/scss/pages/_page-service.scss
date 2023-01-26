@@ -1,0 +1,13 @@
+.p-service {
+	h1 {
+		@media (max-width: $mobile) {
+			font-size: 48px !important;
+		}
+	}
+	.project-head {
+		margin-bottom: 160px;
+		@media (max-width: $mobile) {
+			margin-bottom: 80px;
+		}
+	}
+}

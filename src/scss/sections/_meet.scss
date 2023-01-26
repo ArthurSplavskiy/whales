@@ -1,7 +1,7 @@
 .s-meet {
 	&-grid {
 		//overflow: hidden;
-		padding-bottom: 124px;
+		padding-bottom: 24px;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: flex-start;
@@ -10,72 +10,73 @@
 			column-gap: 20px;
 			row-gap: 20px;
 		}
-		.meet-card {
-			background: $primary-gradient;
-			border-radius: 20px;
-			will-change: transform;
-			position: relative;
-			flex: 1 1 calc(20% - 30px);
-			transition: var(--transition);
-			height: 200px;
-			&:nth-child(2),
-			&:nth-child(4),
-			&:nth-child(7),
-			&:nth-child(9) {
-				top: 54px;
-				@media screen and (max-width: 768px) {
-					top: 0;
-				}
-			}
-			&:nth-child(6),
-			&:nth-child(8) {
-				top: -120px;
-			}
-			@media screen and (max-width: 768px) {
-				height: 160px;
-				flex: 1 1 calc(50% - 16px);
-				&:nth-child(even) {
-					top: 80px;
-				}
-				&:nth-child(3) {
-					top: -50px;
-				}
-				&:nth-child(5),
-				&:nth-child(7) {
-					top: -100px;
-				}
-				&:nth-child(9) {
-					top: -150px;
-				}
-			}
-			&:hover {
-				padding: 1px;
-				div {
-					background: $black-90;
-					transform: scale(1);
-				}
-			}
-			&-big {
-				height: 320px;
-				@media screen and (max-width: 768px) {
-					height: 210px;
-				}
-			}
-			div {
-				height: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				border-radius: 20px;
-				padding: 30px;
-				background: $primary-indigo;
-				transform: scale(1.01);
-				transition: var(--transition);
-			}
-			img,
-			svg {
-				max-width: 100%;
-			}
+	}
+}
+
+.meet-card {
+	background: $primary-gradient;
+	border-radius: 20px;
+	will-change: transform;
+	position: relative;
+	flex: 1 1 calc(20% - 30px);
+	transition: var(--transition);
+	height: 200px;
+	&:nth-child(2),
+	&:nth-child(4),
+	&:nth-child(7),
+	&:nth-child(9) {
+		top: 54px;
+		@media screen and (max-width: 768px) {
+			top: 0;
 		}
+	}
+	&:nth-child(6),
+	&:nth-child(8) {
+		top: -120px;
+	}
+	@media screen and (max-width: 768px) {
+		height: 160px;
+		flex: 1 1 calc(50% - 16px);
+		&:nth-child(even) {
+			top: 80px;
+		}
+		&:nth-child(3) {
+			top: -50px;
+		}
+		&:nth-child(5),
+		&:nth-child(7) {
+			top: -100px;
+		}
+		&:nth-child(9) {
+			top: -150px;
+		}
+	}
+	&:hover {
+		padding: 1px;
+		div {
+			background: $black-90;
+			transform: scale(1);
+		}
+	}
+	&-big {
+		height: 320px;
+		@media screen and (max-width: 768px) {
+			height: 210px;
+		}
+	}
+	div {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 20px;
+		padding: 30px;
+		background: $primary-indigo;
+		transform: scale(1.01);
+		transition: var(--transition);
+	}
+	img,
+	svg {
+		max-width: 100%;
 	}
 }

@@ -3,34 +3,29 @@
 	@@include('html/_head.htm',{})
 
 	<body class="p-404">
-		<div class="wrapper" style="overflow: hidden">
+		<div class="wrapper">
 			@@include('html/_preloader-markup.htm',{}) @@include('html/_header.htm',{})
+			@@include('html/_cursor.htm',{})
 			<main data-an="_fadeUp20">
-				<section class="s-hero">
-					<div class="s-hero-image">
-						<img src="img/hero-07.png" alt="abc" />
-					</div>
-					<div class="container">
-						<div class="s-hero-content">
-							<div class="s-hero-text">
-								<h1 class="s-hero-title" data-an="_fadeUp">404</h1>
-								<p class="s-hero-descr" data-an="_fadeUp" data-del="0.2">
-									Упс. здається щось пішло не так. Спробуйте перезавантажити сторінку, або
-									поверніться на головну
+				<div class="container">
+					<section class="p-404-content">
+						<div class="p-404-head">
+							<h1>404</h1>
+							<div class="p-404-back">
+								<p class="text-18">
+									Scale up your tech company with Whale’s growth toolset. From automation software
+									to a brand stratedy - we got i tcovered
 								</p>
-							</div>
-							<div class="btn">
-								<a href="index.html" class="btn-circle">
-									<img src="img/interface/btn-arrow.svg" alt="link" />
-								</a>
-								<a href="index.html" class="btn-text">Головна сторінка</a>
+								<a href="index.html" class="btn btn-gradient">Back to the homepage</a>
 							</div>
 						</div>
-					</div>
-				</section>
+						<div class="p-404-image-ibg">
+							<img src="img/16.png" alt="" />
+						</div>
+					</section>
+				</div>
 			</main>
-			@@include('html/_footer.htm',{}) @@include('html/_popup-thank.htm',{})
-			@@include('html/_js.htm',{})
+			@@include('html/_footer.htm',{}) @@include('html/_js.htm',{})
 		</div>
 	</body>
 </html>

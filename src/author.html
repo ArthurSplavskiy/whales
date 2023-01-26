@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk" prefix="og: http://ogp.me/ns#">
+	@@include('html/_head.htm',{})
+	<body class="p-article">
+		<div class="wrapper">
+			@@include('html/_preloader-markup.htm',{}) @@include('html/_header.htm',{})
+			@@include('html/_cursor.htm',{})
+			<main data-an="_fadeUp20">
+				<section class="s-hero" data-an="_fadeIn">
+					<div class="container">
+						<div class="s-hero-content">
+							<nav class="breadcrumbs">
+								<ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+									<li itemscope itemtype="http://schema.org/ListItem">
+										<a class="breadcrumbs__link" itemprop="item" href="index.html">Homepage</a>
+										<meta itemprop="position" content="1" />
+									</li>
+									<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+										<a class="breadcrumbs__link" itemprop="item" href="blog.html">Blog</a>
+										<meta itemprop="position" content="2" />
+									</li>
+									<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+										<a class="breadcrumbs__link" itemprop="item" href="blog.html"
+											>How to find and hire senior software developers with a difficult tech
+											stack</a
+										>
+										<meta itemprop="position" content="3" />
+									</li>
+									<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+										<span class="breadcrumbs__link" itemprop="name"
+											>Konstantine Konstantinovich</span
+										>
+										<meta itemprop="position" content="4" />
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</section>
+				<div class="article-content">
+					<aside class="article-sidebar">
+						<a href="blog.html" class="article-back" data-da=".article-title, 850, first"
+							><i class="icon-arrow-left"></i
+						></a>
+					</aside>
+					<section class="s-project">
+						<div class="article-head">
+							<div class="article-title">
+								<h1>Konstantine Konstantinovich</h1>
+							</div>
+						</div>
+						<div class="author-card">
+							<div class="author-card-image-ibg">
+								<img src="img/15.png" alt="" />
+							</div>
+							<div>
+								<div class="author-card-head">
+									<div class="author-card-title">
+										<h6>Editor in cheif</h6>
+										<div class="author-card-journal page-text">
+											<span>Magazine:</span> <span>NY Times</span>
+										</div>
+									</div>
+									<ul class="social-list">
+										<li>
+											<a href="#">
+												<i class="icon-in"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<p>
+									“We build a roadmap of activities, tools, KPI’s, and realistic expeditions. Now we
+									are good to the nrxt step We build a roadmap of activities, tools, KPI’s, and
+									realistic expeditions. Now we are good to the nrxt step”
+								</p>
+							</div>
+						</div>
+					</section>
+					<div></div>
+				</div>
+				<div class="container o-hidden mt-160">
+					<section class="width-normalize">
+						<div class="s-headline">
+							<h3>Other NEWS</h3>
+						</div>
+						<div class="news-slider" data-swiper="news-slider" data-an="_fadeIn" data-del="0.3">
+							<div class="news-slider__swiper">
+								@@include('html/_news-card.htm',{}) @@include('html/_news-card.htm',{})
+								@@include('html/_news-card.htm',{}) @@include('html/_news-card.htm',{})
+							</div>
+							<div class="slider-nav">
+								<div data-swiper-control="news-slider-prev"><i class="icon-arrow-left"></i></div>
+								<div data-swiper-control="news-slider-next"><i class="icon-arrow-right"></i></div>
+							</div>
+						</div>
+					</section>
+				</div>
+				@@include('html/_contacts.htm',{})
+			</main>
+			@@include('html/_footer.htm',{}) @@include('html/_popup-video.htm',{})
+			@@include('html/_popup-callback.htm',{}) @@include('html/_popup-thank.htm',{})
+			@@include('html/_popup-cookie.htm',{}) @@include('html/_js.htm',{})
+		</div>
+	</body>
+</html>

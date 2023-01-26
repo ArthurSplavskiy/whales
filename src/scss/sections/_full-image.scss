@@ -1,0 +1,44 @@
+.s-full-image {
+	&-grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-bottom: 80px;
+		gap: 56px;
+	}
+	&-item {
+		max-width: 312px;
+		display: flex;
+		flex-direction: column;
+		h3,
+		p {
+			text-align: center;
+			@media (max-width: $mobileSmall) {
+				text-align: left;
+			}
+		}
+		p {
+			margin-top: 110px;
+			@media (max-width: $mobile) {
+				margin-top: 24px;
+			}
+		}
+		@media (max-width: $mobile) {
+			max-width: 100%;
+		}
+	}
+	&-ibg {
+		padding-bottom: 50%;
+		min-height: 260px;
+	}
+	.mob-image-ibg {
+		overflow: hidden;
+		border-radius: 10px;
+		width: 100%;
+		height: 200px;
+		margin-top: 24px;
+		@media (min-width: $mobile) {
+			display: none;
+		}
+	}
+}

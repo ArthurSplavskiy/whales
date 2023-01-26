@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk" prefix="og: http://ogp.me/ns#">
+	@@include('html/_head.htm',{})
+	<body class="p-service">
+		<div class="wrapper">
+			@@include('html/_preloader-markup.htm',{}) @@include('html/_header.htm',{})
+			@@include('html/_cursor.htm',{})
+			<main data-an="_fadeUp20">
+				<section class="s-hero" data-an="_fadeIn">
+					<div class="container">
+						<div class="s-hero-content">
+							<nav class="breadcrumbs">
+								<ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+									<li itemscope itemtype="http://schema.org/ListItem">
+										<a class="breadcrumbs__link" itemprop="item" href="index.html">Homepage</a>
+										<meta itemprop="position" content="1" />
+									</li>
+									<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+										<a class="breadcrumbs__link" itemprop="item" href="index.html">Services</a>
+										<meta itemprop="position" content="2" />
+									</li>
+									<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+										<span class="breadcrumbs__link" itemprop="name">Strategy</span>
+										<meta itemprop="position" content="3" />
+									</li>
+								</ul>
+							</nav>
+							<div class="s-hero-title" data-an="_fadeUp">
+								<div class="s-hero-title-img">
+									<h1>Strategy</h1>
+									<div class="s-hero-title-image-ibg">
+										<img src="img/03.png" alt="some" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<div class="container">
+					<div data-tabs class="tabs">
+						<nav data-tabs-titles class="tabs__navigation work-filter-service">
+							<button class="btn btn-outline tabs__title _tab-active">Positioning</button>
+							<button class="btn btn-outline tabs__title">Identity</button>
+							<button class="btn btn-outline tabs__title">Planning</button>
+							<button class="btn btn-outline tabs__title">Audit & Research</button>
+						</nav>
+						<div data-tabs-body class="tabs__content">
+							<div class="tabs__body">
+								@@include('html/_service-content.htm',{ "title": "Positioning" })
+							</div>
+							<div class="tabs__body">
+								@@include('html/_service-content.htm',{ "title": "Identity" })
+							</div>
+							<div class="tabs__body">
+								@@include('html/_service-content.htm',{ "title": "Planning" })
+							</div>
+							<div class="tabs__body">
+								@@include('html/_service-content.htm',{ "title": "Audit & Research" })
+							</div>
+						</div>
+					</div>
+				</div>
+
+				@@include('html/_contacts.htm',{})
+			</main>
+			@@include('html/_footer.htm',{}) @@include('html/_popup-video.htm',{})
+			@@include('html/_popup-callback.htm',{}) @@include('html/_popup-thank.htm',{})
+			@@include('html/_popup-cookie.htm',{}) @@include('html/_js.htm',{})
+		</div>
+	</body>
+</html>

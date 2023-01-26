@@ -1,54 +1,28 @@
 import * as functions from './core/utils/functions.js';
 import * as forms from './core/forms/forms.js';
-import './core/modules/animation.js';
-import './core/modules/sliders.js';
-//import './core/forms/select.js';
-import './core/modules/hoverTabs.js';
-import '../scss/style.scss';
-import { numberGrover } from './core/modules/number-grover.js';
 import { documentClick } from './core/events/click.js';
 import { documentKeyDown } from './core/events/keydown.js';
 import { windowResize } from './core/events/resize.js';
 import { windowMousemove } from './core/events/mouseMove.js';
-import ScrollObserver from './core/utils/observer.js';
 import createHeroVideo from './core/modules/heroVideo.js';
-import createScrollTrigger from './core/modules/createScrollTrigger.js';
-import Preloader from './core/modules/preloader.js';
-import { windowScroll } from './core/events/scroll.js';
 import { mouseMoveHandler, mouseEnterHandler, mouseLeaveHandler } from './core/modules/cursor.js';
-
-const $preloader = document.querySelector('.preloader');
-
-function funPreloader() {
-	$preloader.classList.add('preloader_hide');
-	setTimeout(function () {
-		animateStart();
-	}, 400);
-	setTimeout(function () {
-		$preloader.remove();
-	}, 1000);
-}
-
-const hidePreloaderByCookie = (cookies) => {
-	const firstLoad = cookies
-		.split(';')
-		.filter((c) => c.includes('firstLoad'))?.[0]
-		?.split('=')?.[1];
-
-	if (!Boolean(firstLoad)) {
-		$preloader.remove();
-		funPreloader();
-	} else if (!$preloader.classList.contains('preloader_hide')) {
-		setTimeout(() => {
-			funPreloader();
-		}, 4000);
-	}
-};
+import { createScrollTriggerDesktop } from './core/modules/createScrollTrigger.js';
+import { createStickyNav } from './core/modules/createStickyNav.js';
+import Cookies from 'js-cookie';
+import './core/modules/animation.js';
+import './core/modules/sliders.js';
+import './core/modules/hoverTabs.js';
+import './core/forms/select.js';
+import '../scss/style.scss';
 
 const init = () => {
 	const $html = document.documentElement;
 	const $heroVideoWrapper = document.querySelector('#hero-video-wrapper');
 	$html.classList.add('loaded');
+
+	if (Cookies.get('allow-cookie')) {
+		document.querySelector('#popup-cookie')?.classList.remove('_open');
+	}
 
 	forms.formFieldsInit();
 	forms.formSubmit(true);
@@ -57,21 +31,13 @@ const init = () => {
 	functions.tabs();
 
 	createHeroVideo();
+	createStickyNav();
+	createScrollTriggerDesktop();
 
-	//new Preloader();
 	functions.addLottieAnimation('[data-lottie="bubble-1"]', 'others/lottie/bubble.json', true);
 	functions.addLottieAnimation('[data-lottie="bubble-2"]', 'others/lottie/bubble.json', true);
 	functions.addLottieAnimation('[data-lottie="bubble-3"]', 'others/lottie/bubble.json', true);
 	functions.addLottieAnimation('[data-lottie="bubble-4"]', 'others/lottie/bubble.json', true);
-
-	// new ScrollObserver({
-	// 	element: '.s-about-numbers',
-	// 	animationIn: () => numberGrover(90),
-	// 	observerOptions: {
-	// 		threshold: 0.1
-	// 	}
-	// });
-	hidePreloaderByCookie(document.cookie);
 
 	document.addEventListener('click', documentClick);
 	document.addEventListener('keydown', documentKeyDown);
@@ -79,7 +45,6 @@ const init = () => {
 	window.addEventListener('mousemove', mouseMoveHandler);
 	window.addEventListener('mouseenter', mouseEnterHandler);
 	window.addEventListener('mouseleave', mouseLeaveHandler);
-	//window.addEventListener('scroll', windowScroll, false);
 	if ($heroVideoWrapper) {
 		$heroVideoWrapper.addEventListener('mousemove', windowMousemove);
 	}

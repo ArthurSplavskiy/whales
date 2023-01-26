@@ -227,114 +227,6 @@ function initSliders() {
 		});
 	}
 
-	if (document.querySelector("[data-swiper='sertificates-slider']")) {
-		let slider;
-		const container = "[data-swiper='sertificates-slider']";
-		const sliderOptions = {
-			autoHeight: true,
-			slidesPerView: 4,
-			spaceBetween: 24,
-			speed: 500,
-			navigation: {
-				prevEl: '[data-swiper-control="sertificates-slider-prev"]',
-				nextEl: '[data-swiper-control="sertificates-slider-next"]',
-				disabledClass: '_disabled'
-			},
-			keyboard: {
-				enabled: true,
-				onlyInViewport: false
-			},
-			breakpoints: {
-				0: {
-					slidesPerView: 1,
-					spaceBetween: 16
-				},
-				480: {
-					slidesPerView: 2,
-					spaceBetween: 16
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 24
-				},
-				1380: {
-					slidesPerView: 4,
-					spaceBetween: 24
-				}
-			}
-		};
-		slider = new Swiper(container, sliderOptions);
-	}
-
-	if (document.querySelector("[data-swiper='partners-slider']")) {
-		let slider;
-		const container = "[data-swiper='partners-slider']";
-		const sliderOptions = {
-			speed: 800,
-			slidesPerView: 3,
-			loop: true,
-			navigation: {
-				nextEl: '[data-swiper-control="partners-slider-next"]',
-				prevEl: '[data-swiper-control="partners-slider-prev"]'
-			},
-			spaceBetween: 16,
-			keyboard: {
-				enabled: true,
-				onlyInViewport: false
-			},
-			breakpoints: {
-				0: {
-					slidesPerView: 1.2
-				},
-				480: {
-					slidesPerView: 2
-				},
-				768: {
-					slidesPerView: 2.5
-				},
-				992: {
-					slidesPerView: 3
-				}
-			}
-		};
-		slider = new Swiper(container, sliderOptions);
-	}
-
-	if (document.querySelector("[data-swiper='gallery-slider']")) {
-		let slider;
-		const container = "[data-swiper='gallery-slider']";
-		const sliderOptions = {
-			speed: 800,
-			slidesPerView: 2,
-			loop: true,
-			navigation: {
-				nextEl: '[data-swiper-control="gallery-slider-next"]',
-				prevEl: '[data-swiper-control="gallery-slider-prev"]'
-			},
-			spaceBetween: 24,
-			centeredSlides: true,
-			keyboard: {
-				enabled: true,
-				onlyInViewport: false
-			},
-			breakpoints: {
-				0: {
-					slidesPerView: 1.2
-				},
-				480: {
-					slidesPerView: 1.2
-				},
-				768: {
-					slidesPerView: 1.6
-				},
-				992: {
-					slidesPerView: 2
-				}
-			}
-		};
-		slider = new Swiper(container, sliderOptions);
-	}
-
 	if (document.querySelector("[data-swiper='news-slider']")) {
 		let slider;
 		const container = "[data-swiper='news-slider']";
@@ -343,7 +235,6 @@ function initSliders() {
 			slidesPerView: 3,
 			spaceBetween: 24,
 			speed: 500,
-			loop: true,
 			keyboard: {
 				enabled: true,
 				onlyInViewport: false
@@ -370,68 +261,6 @@ function initSliders() {
 			}
 		};
 		slider = new Swiper(container, sliderOptions);
-	}
-
-	if (document.querySelector("[data-swiper='quote-slider']")) {
-		let slider;
-		const container = "[data-swiper='quote-slider']";
-		const sliderOptions = {
-			parallax: true,
-			autoHeight: true,
-			slidesPerView: 1,
-			spaceBetween: 24,
-			speed: 800,
-			navigation: {
-				prevEl: '[data-swiper-control="quote-slider-prev"]',
-				nextEl: '[data-swiper-control="quote-slider-next"]',
-				disabledClass: '_disabled'
-			}
-		};
-		slider = new Swiper(container, sliderOptions);
-	}
-
-	if (document.querySelector("[data-swiper='timeline']")) {
-		console.log('here');
-		const timelineSwiper = new Swiper("[data-swiper='timeline']", {
-			slidesPerView: 2.9,
-			spaceBetween: 24,
-			freeMode: true,
-			watchSlidesProgress: true,
-			breakpoints: {
-				0: {
-					slidesPerView: 1.2,
-					spaceBetween: 16
-				},
-				480: {
-					slidesPerView: 1.9
-				},
-				768: {
-					slidesPerView: 1.9
-				},
-				992: {
-					slidesPerView: 2.2
-				},
-				1200: {
-					slidesPerView: 1.9,
-					spaceBetween: 24
-				},
-				1400: {
-					slidesPerView: 2.9
-				}
-			}
-		});
-		new Swiper("[data-swiper='timeline-head']", {
-			spaceBetween: 10,
-			slidesPerView: 1,
-			navigation: {
-				prevEl: '[data-swiper-control="timeline-slider-prev"]',
-				nextEl: '[data-swiper-control="timeline-slider-next"]',
-				disabledClass: '_disabled'
-			},
-			thumbs: {
-				swiper: timelineSwiper
-			}
-		});
 	}
 }
 
