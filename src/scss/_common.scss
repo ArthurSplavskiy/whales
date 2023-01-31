@@ -7,6 +7,10 @@
 	border: 0;
 	vertical-align: baseline;
 	-webkit-tap-highlight-color: transparent;
+	&::selection {
+		color: white;
+		background: $ohra-hover;
+	}
 }
 
 html {
@@ -28,8 +32,8 @@ body {
 	min-width: 300px;
 	min-height: 100vh;
 	background: $primary-black;
-	user-select: none;
-	-webkit-user-select: none;
+	// user-select: none;
+	// -webkit-user-select: none;
 	overflow-x: hidden;
 
 	&.scroll,

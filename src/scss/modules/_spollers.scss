@@ -48,6 +48,9 @@
 				transform: scale(1.1);
 			}
 		}
+		h4 {
+			font-weight: 400;
+		}
 		&._spoller-active {
 			transition-delay: 0s;
 			border-radius: 20px 20px 0 0;
@@ -59,6 +62,7 @@
 				@include gradient-text($primary-gradient);
 			}
 			.spollers__close {
+				transform: rotate(0);
 				&:before {
 					display: block;
 				}
@@ -80,6 +84,7 @@
 		width: 32px;
 		height: 32px;
 		position: relative;
+		transform: rotate(45deg);
 		&:before {
 			content: '';
 			@extend %absolute-center;

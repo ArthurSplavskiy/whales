@@ -41,6 +41,7 @@
 			background: #3c354f;
 			transition: opacity 1s;
 			transition-delay: 1s;
+			overflow: hidden;
 		}
 
 		.preloader-circle {
@@ -51,8 +52,14 @@
 			position: fixed;
 			top: 50%;
 			left: 60%;
+			z-index: 99998;
+			opacity: 0;
+			animation: scalePreloaderCircle 1s ease-in-out forwards 3.3s;
+		}
+		[data-lottie='preloader'] {
+			position: fixed;
 			z-index: 99999;
-			animation: scalePreloaderCircle 1s ease-in-out forwards;
+			animation: hideWhale 0.5s forwards 3s;
 		}
 
 		.preloader_hide {
@@ -62,9 +69,22 @@
 		@keyframes scalePreloaderCircle {
 			0% {
 				transform: scale(1);
+				opacity: 1;
 			}
 			100% {
 				transform: scale(180);
+				opacity: 1;
+			}
+		}
+		@keyframes hideWhale {
+			100% {
+				opacity: 0;
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+			[data-lottie='preloader'] {
+				transform: scale(2);
 			}
 		}
 	</style>

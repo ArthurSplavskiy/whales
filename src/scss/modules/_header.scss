@@ -67,6 +67,14 @@
 					color: $ohra-hover;
 				}
 			}
+			&._active {
+				a {
+					@include gradient-text($primary-gradient);
+				}
+				&:before {
+					opacity: 0;
+				}
+			}
 		}
 	}
 }

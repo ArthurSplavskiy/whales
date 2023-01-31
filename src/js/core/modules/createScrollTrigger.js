@@ -5,12 +5,12 @@ gsap.registerPlugin(ScrollTrigger);
 const createScrollTriggerDesktop = () => {
 	const t = {
 		trigger: '.s-stories',
-		start: 'top bottom',
+		start: '20% bottom',
 		scrub: true
 	};
 	const t2 = {
 		trigger: '.s-meet',
-		start: 'top bottom',
+		start: '40% bottom',
 		scrub: true
 	};
 	if (window.innerWidth >= 768) {

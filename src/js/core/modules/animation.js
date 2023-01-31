@@ -282,25 +282,25 @@ function funPreloader() {
 $(window).on('load', function () {
 	//after full load
 	//hide preloader after load
-	const preloaderAnimationDuration = 4000;
+	const preloaderAnimationDuration = 3500;
 	const firstLoad = Cookies.get('first-load');
 
 	if (!Boolean(firstLoad)) {
 		Cookies.set('first-load', true);
 	} else {
-		Cookies.set('first-load', false);
+		Cookies.set('first-load', true);
 	}
 
 	if (Boolean(firstLoad)) {
-		//addLottieAnimation('[data-lottie="preloader"]', 'others/preloader.json');
+		addLottieAnimation('[data-lottie="preloader"]', 'others/preloader.json');
 	}
 	if (!Boolean(firstLoad) && !el.preloader.hasClass(el.preloaderCl)) {
 		funPreloader();
 	} else {
-		funPreloader();
-		// setTimeout(() => {
-		// 	funPreloader();
-		// }, preloaderAnimationDuration);
+		//funPreloader();
+		setTimeout(() => {
+			funPreloader();
+		}, preloaderAnimationDuration);
 	}
 });
 

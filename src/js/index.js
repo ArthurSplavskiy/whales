@@ -5,9 +5,10 @@ import { documentKeyDown } from './core/events/keydown.js';
 import { windowResize } from './core/events/resize.js';
 import { windowMousemove } from './core/events/mouseMove.js';
 import createHeroVideo from './core/modules/heroVideo.js';
-import { mouseMoveHandler, mouseEnterHandler, mouseLeaveHandler } from './core/modules/cursor.js';
+//import { mouseMoveHandler, mouseEnterHandler, mouseLeaveHandler } from './core/modules/cursor.js';
 import { createScrollTriggerDesktop } from './core/modules/createScrollTrigger.js';
 import { createStickyNav } from './core/modules/createStickyNav.js';
+import { createActiveUrlLinks } from './core/modules/createActiveUrlLinks.js';
 import Cookies from 'js-cookie';
 import './core/modules/animation.js';
 import './core/modules/sliders.js';
@@ -33,6 +34,7 @@ const init = () => {
 	createHeroVideo();
 	createStickyNav();
 	createScrollTriggerDesktop();
+	createActiveUrlLinks();
 
 	functions.addLottieAnimation('[data-lottie="bubble-1"]', 'others/lottie/bubble.json', true);
 	functions.addLottieAnimation('[data-lottie="bubble-2"]', 'others/lottie/bubble.json', true);
@@ -42,9 +44,9 @@ const init = () => {
 	document.addEventListener('click', documentClick);
 	document.addEventListener('keydown', documentKeyDown);
 	window.addEventListener('resize', windowResize);
-	window.addEventListener('mousemove', mouseMoveHandler);
-	window.addEventListener('mouseenter', mouseEnterHandler);
-	window.addEventListener('mouseleave', mouseLeaveHandler);
+	// window.addEventListener('mousemove', mouseMoveHandler);
+	// window.addEventListener('mouseenter', mouseEnterHandler);
+	// window.addEventListener('mouseleave', mouseLeaveHandler);
 	if ($heroVideoWrapper) {
 		$heroVideoWrapper.addEventListener('mousemove', windowMousemove);
 	}

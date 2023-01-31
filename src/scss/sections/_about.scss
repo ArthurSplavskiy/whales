@@ -16,8 +16,11 @@
 	&-list {
 		@extend %listCounter;
 		display: grid;
-		grid-template-columns: 2fr 1.06fr;
+		grid-template-columns: 2fr 1fr;
 		gap: 24px;
+		@media (max-width: 1340px) {
+			grid-template-columns: 2fr 0.9fr;
+		}
 		@media (max-width: $mobile) {
 			gap: 16px;
 		}

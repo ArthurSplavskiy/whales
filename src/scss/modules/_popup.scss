@@ -82,14 +82,33 @@
 
 #popup-thank {
 	text-align: center;
-	.popup-close {
-		display: flex;
-		justify-content: end;
+	.popup-content {
+		max-width: 648px;
+		border-radius: 20px;
+		padding: 80px 10px;
+		position: relative;
+		overflow: visible;
 	}
 	h2 {
-		margin: 20px 0;
-		& ~ * {
-			margin-bottom: 20px;
+		font-size: 56px;
+		margin-bottom: 20px;
+	}
+	p {
+		font-family: $ff-2, serif;
+	}
+	.popup-close {
+		position: absolute;
+		top: 44px;
+		right: 40px;
+		@media (max-width: $mobile) {
+			top: 28px;
+			right: 20px;
+		}
+		img,
+		svg {
+			&:hover {
+				transform: scale(1.1);
+			}
 		}
 	}
 }
