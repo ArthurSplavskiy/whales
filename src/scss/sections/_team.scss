@@ -112,6 +112,11 @@
 			}
 		}
 	}
+	.btn {
+		@media (max-width: $mobile) {
+			align-self: baseline;
+		}
+	}
 }
 
 .team-card {
@@ -166,7 +171,7 @@
 	}
 	&-image-ibg {
 		@media (max-width: $mobileSmall) {
-			height: 70vw;
+			height: 42vw;
 		}
 	}
 	&-footer {

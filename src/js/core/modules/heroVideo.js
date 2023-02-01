@@ -117,6 +117,7 @@ function createHeroVideo() {
 }
 
 export const heroVideoHover = (x, y) => {
+	if (window.innerWidth > 992) return;
 	const wrapperWidth = videoWrapper.offsetWidth;
 	const wrapperHeight = 412;
 	const xPercent = +Number((x * 100) / wrapperWidth / 100).toFixed(2);

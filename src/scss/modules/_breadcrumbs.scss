@@ -32,27 +32,32 @@
 
 			&:not(:last-child) {
 				position: relative;
-				display: flex;
+				//display: flex;
 				a {
-					margin-right: 8px;
 					color: $black-70;
 					&:hover {
 						color: $orange;
 					}
 				}
-				&:after {
-					content: '/';
-					display: block;
-					width: 4px;
-					color: $black-70;
+				span {
+					margin-left: 8px;
 					margin-right: 8px;
+					color: $black-70;
+					width: 4px;
 				}
+				// &:after {
+				// 	content: '/';
+				// 	display: block;
+				// 	width: 4px;
+				// 	color: $black-70;
+				// 	margin-right: 8px;
+				// }
 			}
 			span {
 				color: $white;
 			}
 			a {
-				display: flex;
+				//display: flex;
 				min-width: 16px;
 			}
 			img,

@@ -125,9 +125,20 @@ button {
 			border-bottom-left-radius: 0;
 			border-bottom-right-radius: 0;
 			border-bottom: none;
+			background: white;
+			color: $primary-magneta;
 			&:after {
 				transform: rotate(-270deg);
 			}
+		}
+		.select__options {
+			background: white;
+		}
+		.select__option {
+			color: $primary-black;
+			width: 100%;
+			text-align: left;
+			border-top: 1px solid $black-10;
 		}
 	}
 	// .select__item
@@ -187,20 +198,24 @@ button {
 		background-color: $primary-black;
 		border: 1px solid $primary-magneta;
 		border-top: none;
-		padding: 5px 0px 5px 24px;
+		padding: 0px 0px 5px 24px;
 		border-bottom-left-radius: 20px;
 		border-bottom-right-radius: 20px;
 		z-index: 2;
 	}
 	// .select__option
 	&__option {
+		line-height: 100%;
 		display: block;
 		font-family: 'Anton', 'NeueHaasDisplay', sans-serif;
 		cursor: pointer;
-		padding: 5px 0;
-		margin: 0px 0px 10px 0px;
+		padding: 10px 0;
 		background: none;
 		color: $white;
 		color: $primary-ohra;
+	}
+
+	[hidden] {
+		display: none;
 	}
 }

@@ -55,6 +55,9 @@
 		margin-bottom: 16px;
 		border-radius: 20px;
 		overflow: hidden;
+		@media (max-width: $mobile) {
+			padding-bottom: 138%;
+		}
 		img {
 			transition: 0.3s;
 		}

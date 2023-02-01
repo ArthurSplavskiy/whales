@@ -21,6 +21,8 @@
 			}
 			margin-bottom: 64px;
 			@media (max-width: $mobile) {
+				font-size: 48px;
+				line-height: 100%;
 				margin-bottom: 40px;
 			}
 			@media (max-width: 1100px) {

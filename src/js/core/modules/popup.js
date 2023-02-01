@@ -1,6 +1,6 @@
 export const popup = {
 	open(selector) {
-		document.querySelector('.popup')?.classList.remove('_open');
+		document.querySelector('.popup._open')?.classList.remove('_open');
 		document.documentElement.classList.add('popup-open');
 		document.querySelector(selector)?.classList.add('_open');
 	},

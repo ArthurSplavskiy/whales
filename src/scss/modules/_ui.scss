@@ -118,6 +118,7 @@
 		flex-wrap: wrap;
 		gap: 16px;
 		@media (max-width: $mobile) {
+			gap: 8px;
 			justify-content: flex-start;
 		}
 		.btn {
@@ -384,5 +385,18 @@
 	height: 420px !important;
 	@media (max-width: $mobile) {
 		height: 260px !important;
+	}
+}
+
+.mobile-h-440 {
+	@media (max-width: $mobile) {
+		height: 440px;
+	}
+}
+
+.border-mobile-none {
+	@media (max-width: $mobile) {
+		border: none !important;
+		padding-top: 0 !important;
 	}
 }

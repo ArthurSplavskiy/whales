@@ -47,6 +47,7 @@ strong {
 }
 
 h1 {
+	font-weight: 400;
 	font-size: 120px;
 	line-height: 100%;
 	text-transform: uppercase;
@@ -80,6 +81,7 @@ h3 {
 }
 
 h4 {
+	font-weight: 400;
 	font-family: 'Anton', 'NeueHaasDisplay', sans-serif;
 	font-size: 32px;
 	line-height: 100%;
@@ -90,12 +92,17 @@ h4 {
 }
 
 h5 {
+	font-weight: 400;
 	font-size: 18px;
 	line-height: 100%;
 	text-transform: uppercase;
 	@media (max-width: $mobileSmall) {
 		font-size: 12px;
 	}
+}
+
+h6 {
+	font-weight: 400;
 }
 
 .page-text {
