@@ -196,6 +196,7 @@
 		@media (max-width: $mobile) {
 			padding-bottom: 40px;
 			border: none;
+			max-width: 280px;
 		}
 		@media (max-width: $mobileSmall) {
 			grid-template-columns: 1fr;

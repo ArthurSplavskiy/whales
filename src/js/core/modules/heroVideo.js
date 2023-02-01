@@ -12,15 +12,16 @@ function createHeroVideo() {
 		const wrapperWidth = videoWrapper.offsetWidth;
 		let wrapperHeight = 412;
 		if (window.innerWidth < 992) {
-			wrapperHeight = 310;
-		}
-		if (window.innerWidth < 992) {
 			wrapperHeight = 374;
 		}
 
 		svgMask.setAttribute('viewBox', `0 0 ${wrapperWidth} ${wrapperHeight}`);
 		svgCraft.forEach((svg) => {
 			svg.querySelectorAll('.s-craft-rect-mask').forEach((r, idx) => {
+				if (window.innerWidth < 768) {
+					if (idx === 0) r.setAttribute('y', '50');
+					if (idx === 2) r.setAttribute('y', '95');
+				}
 				if (window.innerWidth < 1200) {
 					r.setAttribute('width', valueFromPercent(wrapperWidth, 32.48) + 'px');
 					if (idx === 0) {
@@ -99,7 +100,14 @@ function createHeroVideo() {
 			if (window.innerWidth < 480) {
 				r.setAttribute('width', valueFromPercent(wrapperWidth, 32.48) + 'px');
 				if (idx === 0) {
+					r.setAttribute('y', '30');
 					r.setAttribute('x', '0');
+				}
+				if (idx === 1) {
+					r.setAttribute('y', '95');
+				}
+				if (idx === 2) {
+					r.setAttribute('y', '0');
 				}
 				if (idx > 0 && idx < 3) {
 					r.setAttribute(

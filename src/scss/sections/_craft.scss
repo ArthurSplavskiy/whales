@@ -29,6 +29,9 @@
 		@media (max-width: 1200px) {
 			margin-bottom: 24px;
 		}
+		@media (max-width: $mobile) {
+			height: 278px;
+		}
 		&._animated {
 			// .s-craft-rect-mask {
 			// 	animation: imageChange 0.8s ease-out forwards 0.5s;
