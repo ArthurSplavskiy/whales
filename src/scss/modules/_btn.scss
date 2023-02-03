@@ -78,12 +78,15 @@ button {
 			background: $white;
 			transform-origin: 100% 0;
 			transition: transform $animate;
-			transform: scaleX(0);
+			transform: scaleX(1);
 		}
 
-		&:hover::before {
-			transform: scaleX(1);
-			transform-origin: 0 0;
+		&:hover {
+			color: $ohra-hover;
+			&::before {
+				transform: scaleX(0);
+				transform-origin: 100% 100%;
+			}
 		}
 
 		&-gradient {
@@ -106,12 +109,15 @@ button {
 			background: $primary-magneta;
 		}
 	}
+	&-min-180 {
+		min-width: 180px;
+		display: flex;
+		justify-content: center;
+	}
 }
 
 .select {
 	position: relative;
-	font-size: 14px;
-	line-height: 1000%;
 	select {
 		display: none;
 	}
@@ -151,13 +157,15 @@ button {
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
-		height: 40px;
+		height: 56px;
 		color: $white;
 		border: 1px solid $primary-magneta;
 		background-color: transparent;
 		cursor: pointer;
 		padding: 0 30px 0 24px;
 		border-radius: 80px;
+		font-size: 14px;
+		line-height: 100%;
 		&:after {
 			font-family: 'icomoon' !important;
 			content: '\e900';
@@ -191,14 +199,14 @@ button {
 		color: $white;
 		display: none;
 		position: absolute;
-		top: 40px;
+		top: 46px;
 
 		min-width: 100%;
 		left: 0;
 		background-color: $primary-black;
 		border: 1px solid $primary-magneta;
 		border-top: none;
-		padding: 0px 0px 5px 24px;
+		padding: 0px 24px 5px 24px;
 		border-bottom-left-radius: 20px;
 		border-bottom-right-radius: 20px;
 		z-index: 2;
@@ -208,6 +216,8 @@ button {
 		line-height: 100%;
 		display: block;
 		font-family: 'Anton', 'NeueHaasDisplay', sans-serif;
+		font-size: 14px;
+		line-height: 100%;
 		cursor: pointer;
 		padding: 10px 0;
 		background: none;

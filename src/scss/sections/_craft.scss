@@ -32,6 +32,17 @@
 		@media (max-width: $mobile) {
 			height: 278px;
 		}
+		&._in-view {
+			.s-craft-rect-mask {
+				animation: imageChange 0.8s ease-out forwards 0.5s;
+			}
+			// .craft-text h2 {
+			// 	animation: textChange 0.8s ease-out forwards !important;
+			// }
+			// .craft-text p {
+			// 	animation: textChange 0.8s ease-out forwards !important;
+			// }
+		}
 		&._animated {
 			// .s-craft-rect-mask {
 			// 	animation: imageChange 0.8s ease-out forwards 0.5s;

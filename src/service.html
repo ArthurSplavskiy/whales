@@ -42,27 +42,24 @@
 				</section>
 
 				<div class="container">
-					<div data-tabs class="tabs">
-						<nav data-tabs-titles class="tabs__navigation work-filter-service">
-							<button class="btn btn-outline tabs__title _tab-active">Positioning</button>
-							<button class="btn btn-outline tabs__title">Identity</button>
-							<button class="btn btn-outline tabs__title">Planning</button>
-							<button class="btn btn-outline tabs__title">Audit & Research</button>
+					<div>
+						<nav class="work-filter-service">
+							<button
+								class="btn btn-outline tabs__title _tab-active"
+								data-anchor-smooth="positioning">
+								Positioning
+							</button>
+							<button class="btn btn-outline tabs__title" data-anchor-smooth="identity">
+								Identity
+							</button>
+							<button class="btn btn-outline tabs__title" data-anchor-smooth="planning">
+								Planning
+							</button>
+							<button class="btn btn-outline tabs__title" data-anchor-smooth="research">
+								Audit & Research
+							</button>
 						</nav>
-						<div data-tabs-body class="tabs__content">
-							<div class="tabs__body">
-								@@include('html/_service-content.htm',{ "title": "Positioning" })
-							</div>
-							<div class="tabs__body">
-								@@include('html/_service-content.htm',{ "title": "Identity" })
-							</div>
-							<div class="tabs__body">
-								@@include('html/_service-content.htm',{ "title": "Planning" })
-							</div>
-							<div class="tabs__body">
-								@@include('html/_service-content.htm',{ "title": "Audit & Research" })
-							</div>
-						</div>
+						@@include('html/_service-content.htm',{ "title": "Positioning" })
 					</div>
 				</div>
 

@@ -86,7 +86,6 @@
 		overflow: hidden;
 		border-radius: 20px;
 		padding-bottom: 55%;
-		min-height: 440px;
 	}
 	.project-photo-grid {
 		display: grid;
@@ -186,25 +185,23 @@
 		align-items: center;
 		grid-template-columns: 1fr 2fr 2fr;
 		gap: 40px;
-		padding-bottom: 32px;
 		&:not(:last-child) {
 			border-bottom: 1px solid $black-90;
+			padding-bottom: 32px;
 		}
 		@media (max-width: 1200px) {
 			grid-template-columns: 1fr 1fr;
 		}
 		@media (max-width: $mobile) {
-			padding-bottom: 40px;
-			border: none;
-			max-width: 280px;
-		}
-		@media (max-width: $mobileSmall) {
 			grid-template-columns: 1fr;
 			gap: 16px;
+			border: none;
+			max-width: 280px;
 		}
 		&:not(:last-child) {
 			margin-bottom: 32px;
 			@media (max-width: $mobile) {
+				padding-bottom: 40px;
 				margin-bottom: 0;
 				border-bottom: none;
 			}
