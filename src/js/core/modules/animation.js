@@ -297,12 +297,14 @@ $(window).on('load', function () {
 
 	if (!Boolean(firstLoad)) {
 		addLottieAnimation('[data-lottie="preloader"]', 'others/preloader.json');
-		document.querySelector('.preloader').style.background = '#3c354f';
+		//document.querySelector('.preloader').style.background = '#3c354f';
 		setTimeout(() => {
 			funPreloader();
 		}, preloaderAnimationDuration);
 	}
 	if (Boolean(firstLoad) && !el.preloader.hasClass(el.preloaderCl)) {
+		document.querySelector('.preloader').style.transitionDelay = '0.5s';
+		document.querySelector('.preloader').style.transitionDuration = '0.5s';
 		funPreloader();
 	}
 });
