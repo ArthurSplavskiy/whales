@@ -90,7 +90,7 @@ button {
 		}
 
 		&-gradient {
-			padding: 0;
+			padding: 0 !important;
 			border-radius: 0;
 			@include gradient-text($primary-gradient);
 			&::before {

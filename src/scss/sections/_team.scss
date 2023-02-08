@@ -182,6 +182,9 @@
 		@media (max-width: $mobileSmall) {
 			margin-top: 22px;
 		}
+		.btn {
+			align-self: center;
+		}
 	}
 	&-small {
 		grid-template-columns: 312px 1fr;
