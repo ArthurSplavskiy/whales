@@ -137,17 +137,72 @@ export const heroVideoHover = (x, y) => {
 		videoWrapper.classList.remove('reset');
 	}
 
-	maskRects[0]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
-	maskRects[1]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
-	maskRects[2]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
-	maskRects[3]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
-	maskRects[4]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
-	maskRects[5]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
-	maskRects[6]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.9 : xPercent + 0.5);
-	maskRects[7]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.8 : xPercent + 0.5);
-	maskRects[8]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.7 : xPercent + 0.5);
-	maskRects[9]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.6 : xPercent + 0.5);
-	maskRects[10]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.5 : xPercent + 0.5);
+	if (xPercent < 0.15 && xPercent > 0) {
+		maskRects[0]?.style.setProperty('--scale-y', 0.5);
+	} else {
+		maskRects[0]?.style.setProperty('--scale-y', 1);
+	}
+	if (xPercent < 0.2 && xPercent > 0.1) {
+		maskRects[1]?.style.setProperty('--scale-y', 0.8);
+	} else {
+		maskRects[1]?.style.setProperty('--scale-y', 1);
+	}
+	if (xPercent < 0.3 && xPercent > 0.2) {
+		maskRects[2]?.style.setProperty('--scale-y', 0.7);
+	} else {
+		maskRects[2]?.style.setProperty('--scale-y', 1);
+	}
+	if (xPercent < 0.35 && xPercent > 0.25) {
+		maskRects[3]?.style.setProperty('--scale-y', 0.9);
+	} else {
+		maskRects[3]?.style.setProperty('--scale-y', 1);
+	}
+	if (xPercent < 0.45 && xPercent > 0.35) {
+		maskRects[4]?.style.setProperty('--scale-y', 0.8);
+	} else {
+		maskRects[4]?.style.setProperty('--scale-y', 1);
+	}
+	if (xPercent < 0.55 && xPercent > 0.45) {
+		maskRects[5]?.style.setProperty('--scale-y', 0.7);
+	} else {
+		maskRects[5]?.style.setProperty('--scale-y', 1);
+	}
+	if (xPercent < 0.65 && xPercent > 0.55) {
+		maskRects[6]?.style.setProperty('--scale-y', 0.8);
+	} else {
+		maskRects[6]?.style.setProperty('--scale-y', 1);
+	}
+	if (xPercent < 0.75 && xPercent > 0.65) {
+		maskRects[7]?.style.setProperty('--scale-y', 0.8);
+	} else {
+		maskRects[7]?.style.setProperty('--scale-y', 1);
+	}
+	if (xPercent < 0.85 && xPercent > 0.75) {
+		maskRects[8]?.style.setProperty('--scale-y', 0.7);
+	} else {
+		maskRects[8]?.style.setProperty('--scale-y', 1);
+	}
+	if (xPercent < 0.95 && xPercent > 0.85) {
+		maskRects[9]?.style.setProperty('--scale-y', 0.8);
+	} else {
+		maskRects[9]?.style.setProperty('--scale-y', 1);
+	}
+	if (xPercent < 1 && xPercent > 0.85) {
+		maskRects[10]?.style.setProperty('--scale-y', 0.5);
+	} else {
+		maskRects[10]?.style.setProperty('--scale-y', 1);
+	}
+	// maskRects[0]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
+	// maskRects[1]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
+	// maskRects[2]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
+	// maskRects[3]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
+	// maskRects[4]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
+	// maskRects[5]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 1 : xPercent + 0.5);
+	// maskRects[6]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.9 : xPercent + 0.5);
+	// maskRects[7]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.8 : xPercent + 0.5);
+	// maskRects[8]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.7 : xPercent + 0.5);
+	// maskRects[9]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.6 : xPercent + 0.5);
+	// maskRects[10]?.style.setProperty('--scale-y', xPercent + 0.5 > 1 ? 0.5 : xPercent + 0.5);
 };
 
 export default createHeroVideo;

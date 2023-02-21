@@ -55,10 +55,13 @@
 		margin-bottom: 16px;
 		border-radius: 20px;
 		overflow: hidden;
+		z-index: 2;
 		@media (max-width: $mobile) {
 			padding-bottom: 138%;
 		}
 		img {
+			border-radius: 20px;
+			overflow: hidden;
 			transition: 0.3s;
 		}
 		// img {

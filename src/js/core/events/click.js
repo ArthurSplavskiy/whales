@@ -12,6 +12,8 @@ import Cookies from 'js-cookie';
 
 const $pageMenu = document.querySelector('[data-menu]');
 const $pageMenuBtn = document.querySelector('[data-menu-btn]');
+const $heroVideo = document.querySelector('.s-hero-video video');
+const $heroVideoPopup = document.querySelector('#popup-video video');
 
 export const documentClick = (e) => {
 	const targetElement = e.target;
@@ -22,6 +24,8 @@ export const documentClick = (e) => {
 
 	const $videoPopupBtn = functions.isTarget(targetElement, '[data-popup-open="#popup-video"]');
 	if ($videoPopupBtn) {
+		$heroVideo.pause();
+		$heroVideoPopup.play();
 		popup.open('#popup-video');
 		if (bodyLockStatus) {
 			bodyLockToggle();

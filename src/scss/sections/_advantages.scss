@@ -12,7 +12,7 @@
 			position: relative;
 			[data-lottie] {
 				position: absolute;
-				top: 50%;
+				top: 40%;
 				left: 40%;
 				transform: translate(-50%, -50%);
 				width: 400px;
@@ -20,6 +20,7 @@
 				z-index: 2;
 				opacity: 0;
 				transition: $transition;
+				z-index: -1;
 			}
 		}
 		&-number {
@@ -85,11 +86,11 @@
 				}
 			}
 			&:hover {
-				span {
+				/* span {
 					@media (min-width: $tablet) {
 						color: $black-80;
 					}
-				}
+				} */
 				.numbers-img {
 					&:after {
 						transform: scaleY(1);
@@ -100,12 +101,6 @@
 				}
 				[data-lottie] {
 					opacity: 1;
-				}
-				.numbers-head {
-					span,
-					h4 {
-						filter: blur(1px);
-					}
 				}
 			}
 		}

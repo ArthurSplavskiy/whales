@@ -1,99 +1,100 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?w9lbvn');
-  src:  url('fonts/icomoon.eot?w9lbvn#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?w9lbvn') format('truetype'),
-    url('fonts/icomoon.woff?w9lbvn') format('woff'),
-    url('fonts/icomoon.svg?w9lbvn#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+	font-family: 'icomoon';
+	src: url('fonts/icomoon.eot?w9lbvn');
+	src: url('fonts/icomoon.eot?w9lbvn#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff2?w9lbvn') format('woff2'),
+		url('fonts/icomoon.woff?w9lbvn') format('woff'),
+		url('fonts/icomoon.svg?w9lbvn#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
+[class^='icon-'],
+[class*=' icon-'] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
 
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .icon-arrow-left:before {
-  content: "\e900";
-  color: #fff;
+	content: '\e900';
+	color: #fff;
 }
 .icon-arrow-right:before {
-  content: "\e901";
+	content: '\e901';
 }
 .icon-block-sheme:before {
-  content: "\e902";
+	content: '\e902';
 }
 .icon-circle-2:before {
-  content: "\e903";
-  color: #d11547;
+	content: '\e903';
+	color: #d11547;
 }
 .icon-circle-3:before {
-  content: "\e904";
-  color: #d11547;
+	content: '\e904';
+	color: #d11547;
 }
 .icon-circle-4:before {
-  content: "\e905";
-  color: #d11547;
+	content: '\e905';
+	color: #d11547;
 }
 .icon-close:before {
-  content: "\e906";
+	content: '\e906';
 }
 .icon-diamond:before {
-  content: "\e907";
+	content: '\e907';
 }
 .icon-facebook-2:before {
-  content: "\e908";
-  color: #fff;
+	content: '\e908';
+	color: #fff;
 }
 .icon-facebook:before {
-  content: "\e909";
-  color: #fff;
+	content: '\e909';
+	color: #fff;
 }
 .icon-gard:before {
-  content: "\e90a";
+	content: '\e90a';
 }
 .icon-graph:before {
-  content: "\e90b";
+	content: '\e90b';
 }
 .icon-in:before {
-  content: "\e90c";
-  color: #fff;
+	content: '\e90c';
+	color: #fff;
 }
 .icon-insta:before {
-  content: "\e90d";
-  color: #fff;
+	content: '\e90d';
+	color: #fff;
 }
 .icon-minus:before {
-  content: "\e90e";
+	content: '\e90e';
 }
 .icon-pallete:before {
-  content: "\e90f";
+	content: '\e90f';
 }
 .icon-play:before {
-  content: "\e910";
-  color: #fff;
+	content: '\e910';
+	color: #fff;
 }
 .icon-plus:before {
-  content: "\e911";
+	content: '\e911';
 }
 .icon-robo:before {
-  content: "\e912";
+	content: '\e912';
 }
 .icon-rocket:before {
-  content: "\e913";
+	content: '\e913';
 }
 .icon-sheld:before {
-  content: "\e914";
+	content: '\e914';
 }

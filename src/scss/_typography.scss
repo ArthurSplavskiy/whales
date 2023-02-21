@@ -108,8 +108,12 @@ h6 {
 .page-text {
 	font-family: 'NeueHaasDisplay', sans-serif;
 	font-weight: 400;
-	font-size: 14px;
-	line-height: 24px;
+	font-size: 16px;
+	line-height: 28px;
+	@media (max-width: $mobile) {
+		font-size: 14px;
+		line-height: 24px;
+	}
 }
 
 .page-title {

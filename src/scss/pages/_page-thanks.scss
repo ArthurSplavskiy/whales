@@ -1,0 +1,49 @@
+.p-thanks {
+	&-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 24px;
+		padding-top: 80px;
+		@media (max-width: $tablet) {
+			grid-template-columns: 1fr;
+		}
+	}
+	&-head {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		margin-bottom: 56px;
+		@media (max-width: $tablet) {
+			gap: 16px;
+			margin-bottom: 0;
+		}
+		h1 {
+			font-weight: 400;
+			font-size: 88px;
+			line-height: 100%;
+			@media (max-width: $mobile) {
+				font-size: 48px;
+				br {
+					display: none;
+				}
+			}
+		}
+	}
+	&-back {
+		@media (max-width: $tablet) {
+			max-width: 280px;
+		}
+		.btn {
+			margin-top: 40px;
+		}
+	}
+	&-image-ibg {
+		overflow: hidden;
+		border-radius: 20px;
+		height: 408px;
+		margin-bottom: 80px;
+		@media (max-width: $mobileSmall) {
+			height: 240px;
+		}
+	}
+}

@@ -9,16 +9,19 @@ import createHeroVideo from './core/modules/heroVideo.js';
 import { createScrollTriggerDesktop } from './core/modules/createScrollTrigger.js';
 import { createStickyNav } from './core/modules/createStickyNav.js';
 import { createActiveUrlLinks } from './core/modules/createActiveUrlLinks.js';
+import { createParallax } from './core/modules/createParallax.js';
 import Cookies from 'js-cookie';
 import './core/modules/animation.js';
 import './core/modules/sliders.js';
 import './core/modules/hoverTabs.js';
 import './core/forms/select.js';
 import '../scss/style.scss';
+import { windowMouseover } from './core/events/historyListMouseOver.js';
 
 const init = () => {
 	const $html = document.documentElement;
 	const $heroVideoWrapper = document.querySelector('#hero-video-wrapper');
+	const $historyList = document.querySelector('.s-history-list');
 	$html.classList.add('loaded');
 
 	if (Cookies.get('allow-cookie')) {
@@ -35,6 +38,7 @@ const init = () => {
 	createStickyNav();
 	createScrollTriggerDesktop();
 	createActiveUrlLinks();
+	createParallax();
 
 	functions.addLottieAnimation('[data-lottie="bubble-1"]', 'others/lottie/bubble.json', true);
 	functions.addLottieAnimation('[data-lottie="bubble-2"]', 'others/lottie/bubble.json', true);
@@ -47,9 +51,8 @@ const init = () => {
 	// window.addEventListener('mousemove', mouseMoveHandler);
 	// window.addEventListener('mouseenter', mouseEnterHandler);
 	// window.addEventListener('mouseleave', mouseLeaveHandler);
-	if ($heroVideoWrapper) {
-		$heroVideoWrapper.addEventListener('mousemove', windowMousemove);
-	}
+	$heroVideoWrapper && $heroVideoWrapper.addEventListener('mousemove', windowMousemove);
+	$historyList && $historyList.addEventListener('mouseover', windowMouseover);
 };
 
 window.addEventListener('load', init);

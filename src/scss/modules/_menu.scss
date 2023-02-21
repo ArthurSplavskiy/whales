@@ -69,9 +69,13 @@
 				height: 32px;
 				margin: 0 !important;
 				i {
+					transition: $transition;
 					margin: auto !important;
 					&:before {
 						font-size: 25px;
+					}
+					&:hover {
+						color: $ohra-hover;
 					}
 				}
 			}

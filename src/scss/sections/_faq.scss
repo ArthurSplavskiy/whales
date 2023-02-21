@@ -1,4 +1,10 @@
 .s-faq {
+	.spollers__item {
+		transition: $transition;
+		&:hover {
+			transform: scale(1.03);
+		}
+	}
 	&-text {
 		display: flex;
 		flex-direction: column;
